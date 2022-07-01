@@ -24,5 +24,27 @@
 		<h:commandButton action="#{reg.getList()}"
 			value="Register"></h:commandButton>
 	</h:form>
+	<br></br><br></br>
+	<h:form>
+		<h3>Company Registration</h3>
+		<h:outputText value="Company Name" />
+		<h:inputText value="#{creg.username}"></h:inputText>
+		<br></br><br></br>
+		
+		<h:outputText value="Password" />
+		<h:inputSecret value="#{creg.password}"></h:inputSecret>
+		<br></br><br></br>
+		
+		<h:outputText value="Company Email" />
+		<h:inputText value="#{creg.email}"></h:inputText>
+		<br></br><br></br>
+		
+		<h:outputText value="Company Phone No." />
+		<h:inputText value="#{creg.phone}"></h:inputText>
+		<br></br><br></br>
+		
+		<h:commandButton action="#{creg.getList()}"
+			value="Register"></h:commandButton>
+	</h:form>
 </h:body>
 </html>

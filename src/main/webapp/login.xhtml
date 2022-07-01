@@ -15,5 +15,18 @@
 		<h:commandButton action="#{login.getList()}"
 			value="Login"></h:commandButton>
 	</h:form>
+	<br></br><br></br>
+	<h:form>
+		<h3>Company Login</h3>
+		<h:outputText value="Company Name" />
+		<h:inputText value="#{clogin.username}"></h:inputText>
+		<br></br><br></br>
+		
+		<h:outputText value="Password" />
+		<h:inputSecret value="#{clogin.password}"></h:inputSecret>
+		<br></br><br></br>
+		<h:commandButton action="#{clogin.getList()}"
+			value="Login"></h:commandButton>
+	</h:form>
 </h:body>
 </html>
