@@ -2,13 +2,17 @@ package com.controller;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.ejb.EJB;
 
-import com.model.EmployeeManager;
+import com.model.EmployeeRemote;
 
 @ManagedBean(name = "login", eager = true)
 public class LoginData {
 	String username;
 	String password;
+	
+	@EJB(lookup = "java:global/CRM/EmployeeManager!com.model.EmployeeRemote")
+	EmployeeRemote ER;
 	   public String getUsername() {
 			return username;
 		}
@@ -24,8 +28,7 @@ public class LoginData {
 	int l;
 	public void getList() {
 		try {
-			EmployeeManager SM = new EmployeeManager();
-			l = SM.loginData(username,password);
+			l = ER.loginData(username,password);
 			if(l==1)
 				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "loginsuccess.xhtml");
 		}

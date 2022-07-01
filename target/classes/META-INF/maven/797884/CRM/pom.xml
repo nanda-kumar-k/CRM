@@ -19,29 +19,36 @@
   </properties>
 
   <dependencies>
-  <dependency>
-   <groupId>junit</groupId>
-   <artifactId>junit</artifactId>
-   <version>4.11</version>
-   <scope>test</scope>
-  </dependency>
-
-  <!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.faces/jboss-jsf-api_2.2_spec -->
-  <dependency>
-   <groupId>org.jboss.spec.javax.faces</groupId>
-   <artifactId>jboss-jsf-api_2.2_spec</artifactId>
-   <version>2.2.14</version>
-  </dependency>
-
-  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-  <dependency>
-   <groupId>mysql</groupId>
-   <artifactId>mysql-connector-java</artifactId>
-   <version>8.0.29</version>
-  </dependency>
-
-
- </dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.faces/jboss-jsf-api_2.2_spec -->
+	<dependency>
+	    <groupId>org.jboss.spec.javax.faces</groupId>
+	    <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+	    <version>2.2.14</version>
+	</dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.ejb/jboss-ejb-api_3.1_spec -->
+	<dependency>
+	    <groupId>org.jboss.spec.javax.ejb</groupId>
+	    <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+	    <version>1.0.2.Final</version>
+	    <scope>provided</scope>
+	</dependency>
+    
+    <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+	<dependency>
+	    <groupId>javax.persistence</groupId>
+	    <artifactId>javax.persistence-api</artifactId>
+	    <version>2.2</version>
+	</dependency>
+    
+  </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

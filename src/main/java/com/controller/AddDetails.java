@@ -1,9 +1,10 @@
 package com.controller;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
-import com.model.EmployeeManager;
+import com.model.EmployeeRemote;
 
 @ManagedBean(name = "reg", eager = true)
 public class AddDetails {
@@ -11,6 +12,8 @@ public class AddDetails {
 	   String password;
 	   String email;
 	   String phone;
+	@EJB(lookup = "java:global/CRM/EmployeeManager!com.model.EmployeeRemote")
+	EmployeeRemote ER;
 	public String getUsername() {
 		return username;
 	}
@@ -38,8 +41,8 @@ public class AddDetails {
 	int l;
 	public void getList() {
 		try {
-			EmployeeManager SM = new EmployeeManager();
-			l = SM.writeData(username,password,email,phone);
+			
+			l = ER.writeData(username,password,email,phone);
 			if(l==1)
 				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "regsuccess.xhtml");
 		}

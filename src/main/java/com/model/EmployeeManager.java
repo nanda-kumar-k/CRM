@@ -1,52 +1,65 @@
 package com.model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+
 import java.util.List;
 
-public class EmployeeManager {
-	String url = "jdbc:mysql://localhost:3306/Employee";
-	String dbuser = "root";
-	String dbpwd = "Teja@123";
+import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
-	Connection con = null;
-	PreparedStatement ps = null;
+import com.entity.Employee;
 
+@Stateless
+@TransactionManagement(value = TransactionManagementType.BEAN)
+public class EmployeeManager implements EmployeeRemote{
+
+	@Override
 	public int writeData(String username,String password,String email,String phone){
 		try {
-			con = DriverManager.getConnection(url, dbuser, dbpwd);
-			ps = con.prepareStatement("insert into employee values(?,?,?,?)");
-			ps.setString(1, username);
-			ps.setString(2,password);
-			ps.setString(4,phone);
-			ps.setString(3,email);
-			int f = ps.executeUpdate();
-	       if(f>0) {
-		        return 1;
+			Employee E=new Employee();
+			E.setEmail(email);
+			E.setName(username);
+			E.setPassword(password);
+			E.setPhone(phone);
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+			EntityManager em = emf.createEntityManager();
+			em.getTransaction().begin();
+			em.persist(E);
+			em.getTransaction().commit();
+			em.close();
+			emf.close();
+			return 1;
 	       }
-	       con.close();
-		}
 		catch(Exception e) {
 			
 		}
 		return 0;
 	}
-
+	
+	@Override
 	public int loginData(String username,String password) {
 		
 		try {
-			con = DriverManager.getConnection(url, dbuser, dbpwd);
-			ps = con.prepareStatement("select * from employee where username=? and password=?");
-			ps.setString(1, username);
-			ps.setString(2,password);
-			ResultSet rs = ps.executeQuery();
-	       if(rs.next()) {
-		        return 1;
-	       }
-	       con.close();
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+			EntityManager em = emf.createEntityManager();
+			em.getTransaction().begin();
+			Employee E = em.find(Employee.class, username);
+			Employee e = em.find(Employee.class, password);
+			//Query qry = em.createQuery("select e from example e where e.username=?1 and e.password=?2");
+			//qry.setParameter(1,username);
+			//qry.setParameter(2, password);
+			//@SuppressWarnings("unchecked")
+			//List<Employee> E=qry.getResultList();
+			//System.out.println(e.getEmail());
+			if(E!=null && e!=null)
+				return 1;
+			em.getTransaction().commit();
+			em.close();
+			emf.close();
 		}
 		catch(Exception e) {
 			
