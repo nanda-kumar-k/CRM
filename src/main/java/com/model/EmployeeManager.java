@@ -48,15 +48,14 @@ public class EmployeeManager implements EmployeeRemote{
 			EntityManager em = emf.createEntityManager();
 			em.getTransaction().begin();
 			Employee E = em.find(Employee.class, username);
-			Employee e = em.find(Employee.class, password);
+			if(E.getPassword().equals(password))
+				return 1;
 			//Query qry = em.createQuery("select e from example e where e.username=?1 and e.password=?2");
 			//qry.setParameter(1,username);
 			//qry.setParameter(2, password);
 			//@SuppressWarnings("unchecked")
 			//List<Employee> E=qry.getResultList();
-			//System.out.println(e.getEmail());
-			if(E!=null && e!=null)
-				return 1;
+			//if(E!=null && e!=null)
 			em.getTransaction().commit();
 			em.close();
 			emf.close();
