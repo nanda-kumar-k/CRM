@@ -103,21 +103,11 @@
                     <br/>
                     <br/>
                     <p>Looking for Job Role</p>
-                    <select class="in">
-                        <option>Select Job Role</option>
-                        <option value="#{reg.jobRole}">hyderabad</option>
-                        <option value="#{reg.jobRole}">vijayawada</option>
-                        <option value="#{reg.jobRole}">hyderabad</option>
-                        <option value="#{reg.jobRole}">vijayawada</option>
-                    </select>
-                    <p>Looking for Job Location</p>
-                    <select class="in">
-                        <option>Select Location</option>
-                        <option value="#{reg.location}">hyderabad</option>
-                        <option value="#{reg.location}">vijayawada</option>
-                        <option value="#{reg.location}">hyderabad</option>
-                        <option value="#{reg.location}">vijayawada</option>
-                    </select>
+                    <h:selectOneMenu value="#{reg.jobRole}" class="in">
+                    	<f:selectItem itemValue = "hyderabad" itemLabel = "hyderabad" /> 
+                    	<f:selectItem itemValue = "vijayawada" itemLabel = "vijayawada" />
+                    	<f:selectItem itemValue = "vijayawada" itemLabel = "vijayawada" />
+                    </h:selectOneMenu>
                     <br/>
                     <br/>
                     <br/>
