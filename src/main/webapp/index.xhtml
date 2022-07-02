@@ -1,0 +1,295 @@
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="static/style.css"/>
+    </h:head>
+    <h:body>
+        <div class="home-navbar">
+        <div class="home-login" id="homelogin">
+            <div class="login">
+                <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <br/>
+                <br/>
+                <h2>Client Login</h2>
+                <br/>
+                <form method="post" action="" id="form">
+                    <p>Username</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <input type="password" name="password" id="in" />
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
+                </form>
+            </div>
+        </div>
+        <div class="home-login" id="companylogin">
+            <div class="login">
+                <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <br/>
+                <br/>
+                <h2>Company Login</h2>
+                <br/>
+                <form method="post" action="" id="form">
+                    <p>Username</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <input type="password" name="password" id="in" />
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
+                </form>
+            </div>
+        </div>
+        <div class="home-login" id="jobregister">
+            <div class="login">
+                <div class="login-close" onclick="jobregisterfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <h2>Client Registration</h2>
+                <br/>
+                <form method="post" action="" id="form">
+                    <p>Name</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Username</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <input type="password" name="password" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Email</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Phone Number</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Education Details</p>
+                    <textarea id="in" style="height: 60px;border-radius: 20px;"></textarea>
+                    <br/>
+                    <br/>
+                    <p>Looking for Job Role</p>
+                    <select id="in">
+                        <option>Select Job Role</option>
+                        <option>hyderabad</option>
+                        <option>vijayawada</option>
+                        <option>hyderabad</option>
+                        <option>vijayawada</option>
+                    </select>
+                    <p>Looking for Job Location</p>
+                    <select id="in">
+                        <option>Select Location</option>
+                        <option>hyderabad</option>
+                        <option>vijayawada</option>
+                        <option>hyderabad</option>
+                        <option>vijayawada</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
+                </form>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="home-login" id="companyregister">
+            <div class="login">
+                <div class="login-close" onclick="companyregisterfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <h2>Company Registration</h2>
+                <br/>
+                <form method="post" action="" id="form">
+                    <p>Comapany Name</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Username</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <input type="password" name="password" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Email</p>
+                    <input type="text" name="username" id="in" />
+                    <br/>
+                    <br/>
+                    <p>Company Location</p>
+                    <select id="in">
+                        <option>Select Location</option>
+                        <option>hyderabad</option>
+                        <option>vijayawada</option>
+                        <option>hyderabad</option>
+                        <option>vijayawada</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
+                </form>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <img src="static/images/logo.jpeg" />
+        <div class="home-btn" style="width: 70px; background-color: white;border-color: aqua;border-style: solid;border-width: 1px;" onclick="clientloginfun('open')">Login</div>
+        <div class="home-btn" style="width: 100px;" onclick="jobregisterfun('open')">Register</div>
+        <div class="home-btn" style=" background-color: white;border-color: aqua;border-style: solid;border-width: 1px;" onclick="companyloginfun('open')">Company Login</div>
+        <div class="home-btn" onclick="companyregisterfun('open')">Comapny Register</div>
+    </div>
+    <div class="home-info">
+        <h1>Find your dream job now</h1>
+        <p>5 lakh+ jobs for you to explore</p>
+    </div>
+    <form>
+        <div class="home-search-option">
+            <select id="role">
+                <option>Select Job Role</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+            </select>
+            <select id="location">
+                <option>Select Location</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+            </select>
+            <div class="home-btn" style="width: 100px;background-color: rgb(34, 152, 248)">Search</div>
+        </div>
+    </form>
+	<div class="jobs-container">
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+     </div>
+    <script>
+    function clientloginfun(attr){
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+        }
+    }
+    function companyloginfun(attr){
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companylogin").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companylogin").style.display = "none";
+        }
+    }
+    function jobregisterfun(attr) {
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("jobregister").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("jobregister").style.display = "none";
+        }
+    }
+    function companyregisterfun(attr) {
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companyregister").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companyregister").style.display = "none";
+        }
+    }
+    </script>
+    
+    </h:body>
+</html>
