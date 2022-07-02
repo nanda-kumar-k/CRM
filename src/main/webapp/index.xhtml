@@ -15,18 +15,19 @@
                 <br/>
                 <h2>Client Login</h2>
                 <br/>
-                <form method="post" action="" id="form">
+                <h:form class="form">
                     <p>Username</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{login.username}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Password</p>
-                    <input type="password" name="password" id="in" />
+                    <h:inputSecret value="#{login.password}" class="in"></h:inputSecret>
                     <br/>
                     <br/>
                     <br/>
-                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                </form>
+                    <h:commandButton action="#{login.getList()}" value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                
             </div>
         </div>
         <div class="home-login" id="companylogin">
@@ -40,18 +41,19 @@
                 <br/>
                 <h2>Company Login</h2>
                 <br/>
-                <form method="post" action="" id="form">
+                <h:form class="form">
                     <p>Username</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{clogin.username}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Password</p>
-                    <input type="password" name="password" id="in" />
+                    <h:inputSecret value="#{clogin.password}" class="in"></h:inputSecret>
                     <br/>
                     <br/>
                     <br/>
-                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                </form>
+                    <h:commandButton action="#{clogin.getList()}" value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                
             </div>
         </div>
         <div class="home-login" id="jobregister">
@@ -75,52 +77,52 @@
                 <p>Number One online job listing</p>
                 <h2>Client Registration</h2>
                 <br/>
-                <form method="post" action="" id="form">
+                <h:form class="form">
                     <p>Name</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{reg.name}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Username</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{reg.username}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Password</p>
-                    <input type="password" name="password" id="in" />
+                    <h:inputSecret value="#{reg.password}" class="in"></h:inputSecret>
                     <br/>
                     <br/>
                     <p>Email</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{reg.email}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Phone Number</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{reg.phone}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Education Details</p>
-                    <textarea id="in" style="height: 60px;border-radius: 20px;"></textarea>
+                    <h:inputText value="#{reg.edu}" class="in" style="height: 60px;border-radius: 20px;"></h:inputText>
                     <br/>
                     <br/>
                     <p>Looking for Job Role</p>
-                    <select id="in">
+                    <select class="in">
                         <option>Select Job Role</option>
-                        <option>hyderabad</option>
-                        <option>vijayawada</option>
-                        <option>hyderabad</option>
-                        <option>vijayawada</option>
+                        <option value="#{reg.jobRole}">hyderabad</option>
+                        <option value="#{reg.jobRole}">vijayawada</option>
+                        <option value="#{reg.jobRole}">hyderabad</option>
+                        <option value="#{reg.jobRole}">vijayawada</option>
                     </select>
                     <p>Looking for Job Location</p>
-                    <select id="in">
+                    <select class="in">
                         <option>Select Location</option>
-                        <option>hyderabad</option>
-                        <option>vijayawada</option>
-                        <option>hyderabad</option>
-                        <option>vijayawada</option>
+                        <option value="#{reg.location}">hyderabad</option>
+                        <option value="#{reg.location}">vijayawada</option>
+                        <option value="#{reg.location}">hyderabad</option>
+                        <option value="#{reg.location}">vijayawada</option>
                     </select>
                     <br/>
                     <br/>
                     <br/>
-                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                </form>
+                    <h:commandButton action="#{reg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
                 <br/>
                 <br/>
                 <br/>
@@ -143,36 +145,36 @@
                 <p>Number One online job listing</p>
                 <h2>Company Registration</h2>
                 <br/>
-                <form method="post" action="" id="form">
+                <h:form class="form">
                     <p>Comapany Name</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{creg.name}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Username</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{creg.username}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Password</p>
-                    <input type="password" name="password" id="in" />
+                    <h:inputSecret value="#{creg.password}" class="in"></h:inputSecret>
                     <br/>
                     <br/>
                     <p>Email</p>
-                    <input type="text" name="username" id="in" />
+                    <h:inputText value="#{creg.email}" class="in"></h:inputText>
                     <br/>
                     <br/>
                     <p>Company Location</p>
-                    <select id="in">
+                    <select class="in">
                         <option>Select Location</option>
-                        <option>hyderabad</option>
-                        <option>vijayawada</option>
-                        <option>hyderabad</option>
-                        <option>vijayawada</option>
+                        <option value="#{creg.location}">hyderabad</option>
+                        <option value="#{creg.location}">vijayawada</option>
+                        <option value="#{creg.location}">hyderabad</option>
+                        <option value="#{creg.location}">vijayawada</option>
                     </select>
                     <br/>
                     <br/>
                     <br/>
-                    <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                </form>
+                    <h:commandButton action="#{creg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
                 <br/>
                 <br/>
                 <br/>
@@ -250,6 +252,7 @@
             <p style="margin-bottom: 5px;">Email</p>
         </div>
      </div>
+     <h3>Successfully Logged In as #{login.username}#{clogin.username}</h3>
     <script>
     function clientloginfun(attr){
         if(attr=="open"){
