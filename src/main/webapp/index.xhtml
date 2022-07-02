@@ -238,9 +238,25 @@
             <h4 style="margin-bottom: 10px;">Job Role</h4>
             <p style="margin-bottom: 5px;">Job Location</p>
             <p style="margin-bottom: 5px;">No of jobs present</p>
-            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Job Description</p>
             <p style="margin-bottom: 5px;">Email</p>
         </div>
+        
+        <h:dataTable value="#{allget.list}" var="row">
+			<h:column>
+				<f:facet name="header">Company Name</f:facet>
+				#{row.name}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Company Email</f:facet>
+				#{row.email}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Company Location</f:facet>
+				#{row.companyLocation}
+			</h:column>
+		</h:dataTable>
+		
      </div>
      <h3>Successfully Logged In as #{login.username}#{clogin.username}</h3>
     <script>

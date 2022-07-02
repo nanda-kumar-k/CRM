@@ -1,6 +1,8 @@
 package com.model;
 
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
@@ -11,6 +13,7 @@ import javax.persistence.Persistence;
 
 import com.entity.Company;
 import com.entity.Employee;
+import javax.persistence.Query;
 
 @Stateless
 @TransactionManagement(value = TransactionManagementType.BEAN)
@@ -117,6 +120,18 @@ public class EmployeeManager implements EmployeeRemote{
 			
 		}
 		return 0;
+	}
+	public List<Company> getall(){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Query qry=em.createQuery("select e from Company e");
+		@SuppressWarnings("unchecked")
+		List<Company> L = qry.getResultList();
+		em.getTransaction().commit();
+		em.close();
+		emf.close();
+		return L;
 	}
 	
 }
