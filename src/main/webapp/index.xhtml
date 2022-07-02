@@ -103,6 +103,7 @@
                     <br/>
                     <br/>
                     <p>Looking for Job Role</p>
+<<<<<<< HEAD
                     <h:selectOneMenu value="#{reg.jobRole}" class="in">
                     	<f:selectItem itemValue = "cloud engineer" itemLabel = "cloud engineer" /> 
                     	<f:selectItem itemValue = "software engineer" itemLabel = "software engineer" />
@@ -117,10 +118,43 @@
                     	<f:selectItem itemValue = "vizag" itemLabel = "vizag" />
                     	<f:selectItem itemValue = "tirupati" itemLabel = "tirupati" />
                     	<f:selectItem itemValue = "delhi" itemLabel = "delhi" />
+=======
+                    <h:selectOneMenu value="#{reg.jobRole}" class="in" >
+                    	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
+                    	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
+                    	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
+                    	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
+                    	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
+                    	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
+                    	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
+                    	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
+                    	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
+                    	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
+                    	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
+                    	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
+                    	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
+                    	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
+>>>>>>> 4fbb561a633af2951fa4d3a9fca0b8cf081d11f1
                     </h:selectOneMenu>
                     <br/>
                     <br/>
                     <br/>
+                    <p>Job Location</p>
+                    <h:selectOneMenu value="#{reg.location}" class="in" >
+                    	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
+                    	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
+                    	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
+                    	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
+                    	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
+                    	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
+                    	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
+                    	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
+                    	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
+                    	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
+                    	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
+                    	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
+                    	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
+                    </h:selectOneMenu>
                     <h:commandButton action="#{reg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
                 </h:form>
                 <br/>
@@ -163,6 +197,7 @@
                     <br/>
                     <br/>
                     <p>Company Location</p>
+<<<<<<< HEAD
                     <p>Select Location</p>
                     <h:selectOneMenu value="#{creg.location}" class="in">
                     	<f:selectItem itemValue = "hyderabad" itemLabel = "hyderabad" /> 
@@ -170,6 +205,22 @@
                     	<f:selectItem itemValue = "vizag" itemLabel = "vizag" />
                     	<f:selectItem itemValue = "tirupati" itemLabel = "tirupati" />
                     	<f:selectItem itemValue = "delhi" itemLabel = "delhi" />
+=======
+                    <h:selectOneMenu value="#{creg.location}" class="in" >
+                    	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
+                    	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
+                    	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
+                    	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
+                    	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
+                    	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
+                    	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
+                    	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
+                    	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
+                    	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
+                    	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
+                    	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
+                    	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
+>>>>>>> 4fbb561a633af2951fa4d3a9fca0b8cf081d11f1
                     </h:selectOneMenu>
                     <br/>
                     <br/>
@@ -194,20 +245,37 @@
     </div>
     <form>
         <div class="home-search-option">
-            <select id="role">
-                <option>Select Job Role</option>
-                <option>hyderabad</option>
-                <option>vijayawada</option>
-                <option>hyderabad</option>
-                <option>vijayawada</option>
-            </select>
-            <select id="location">
-                <option>Select Location</option>
-                <option>hyderabad</option>
-                <option>vijayawada</option>
-                <option>hyderabad</option>
-                <option>vijayawada</option>
-            </select>
+        	<h:selectOneMenu value="#{reg.jobRole}" class="role" >
+                   	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
+                   	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
+                   	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
+                   	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
+                   	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
+                   	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
+                   	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
+                   	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
+                   	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
+                   	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
+                   	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
+                   	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
+                   	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
+                   	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
+            </h:selectOneMenu>
+        	<h:selectOneMenu value="#{creg.location}" class="location" >
+                 	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
+                 	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
+                 	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
+                 	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
+                 	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
+                 	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
+                 	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
+                 	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
+                 	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
+                 	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
+                 	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
+                 	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
+                 	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
+             </h:selectOneMenu>
             <div class="home-btn" style="width: 100px;background-color: rgb(34, 152, 248)">Search</div>
         </div>
     </form>
