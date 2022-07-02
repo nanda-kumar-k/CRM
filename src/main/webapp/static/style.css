@@ -54,7 +54,7 @@
     justify-content: center;
     align-items: center;
 }
-.home-search-option #role{
+.home-search-option .role{
     width: 30vw;
     height: 5vh;
     font-size: 20px;
@@ -63,7 +63,7 @@
     border-radius: 50px;
     color: black;
 }
-.home-search-option #location{
+.home-search-option .location{
     width: 15vw;
     height: 5vh;
     font-size: 20px;
