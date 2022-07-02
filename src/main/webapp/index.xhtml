@@ -294,7 +294,7 @@
             <p style="margin-bottom: 5px;">Email</p>
         </div>
         
-        <h:dataTable value="#{allget.list}" var="row">
+         <h:dataTable value="#{allget.list}" var="row">
 			<h:column>
 				<f:facet name="header">Company Name</f:facet>
 				#{row.name}
@@ -308,6 +308,7 @@
 				#{row.companyLocation}
 			</h:column>
 		</h:dataTable>
+        
 		
      </div>
      <h3>Successfully Logged In as #{login.username}#{clogin.username}</h3>
