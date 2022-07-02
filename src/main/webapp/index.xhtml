@@ -104,9 +104,19 @@
                     <br/>
                     <p>Looking for Job Role</p>
                     <h:selectOneMenu value="#{reg.jobRole}" class="in">
+                    	<f:selectItem itemValue = "cloud engineer" itemLabel = "cloud engineer" /> 
+                    	<f:selectItem itemValue = "software engineer" itemLabel = "software engineer" />
+                    	<f:selectItem itemValue = "Developer" itemLabel = "Developer" />
+                    	<f:selectItem itemValue = "HR" itemLabel = "HR" />
+                    	<f:selectItem itemValue = "Testing" itemLabel = "Testing" />
+                    </h:selectOneMenu>
+                    <p>Preferred Job Location</p>
+                    <h:selectOneMenu value="#{reg.location}" class="in">
                     	<f:selectItem itemValue = "hyderabad" itemLabel = "hyderabad" /> 
                     	<f:selectItem itemValue = "vijayawada" itemLabel = "vijayawada" />
-                    	<f:selectItem itemValue = "vijayawada" itemLabel = "vijayawada" />
+                    	<f:selectItem itemValue = "vizag" itemLabel = "vizag" />
+                    	<f:selectItem itemValue = "tirupati" itemLabel = "tirupati" />
+                    	<f:selectItem itemValue = "delhi" itemLabel = "delhi" />
                     </h:selectOneMenu>
                     <br/>
                     <br/>
@@ -153,13 +163,14 @@
                     <br/>
                     <br/>
                     <p>Company Location</p>
-                    <select class="in">
-                        <option>Select Location</option>
-                        <option value="#{creg.location}">hyderabad</option>
-                        <option value="#{creg.location}">vijayawada</option>
-                        <option value="#{creg.location}">hyderabad</option>
-                        <option value="#{creg.location}">vijayawada</option>
-                    </select>
+                    <p>Select Location</p>
+                    <h:selectOneMenu value="#{creg.location}" class="in">
+                    	<f:selectItem itemValue = "hyderabad" itemLabel = "hyderabad" /> 
+                    	<f:selectItem itemValue = "vijayawada" itemLabel = "vijayawada" />
+                    	<f:selectItem itemValue = "vizag" itemLabel = "vizag" />
+                    	<f:selectItem itemValue = "tirupati" itemLabel = "tirupati" />
+                    	<f:selectItem itemValue = "delhi" itemLabel = "delhi" />
+                    </h:selectOneMenu>
                     <br/>
                     <br/>
                     <br/>
