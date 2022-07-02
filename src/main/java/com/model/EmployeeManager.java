@@ -17,13 +17,17 @@ import com.entity.Employee;
 public class EmployeeManager implements EmployeeRemote{
 
 	@Override
-	public int writeData(String username,String password,String email,String phone){
+	public int writeData(String username,String password,String email,String phone,String name,String edu,String jobRole,String location){
 		try {
 			Employee E=new Employee();
 			E.setEmail(email);
-			E.setName(username);
+			E.setUserName(username);
 			E.setPassword(password);
 			E.setPhone(phone);
+			E.setName(name);
+			E.setEdu(edu);
+			E.setJobRole(jobRole);
+			E.setJobLocation(location);
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
 			EntityManager em = emf.createEntityManager();
 			em.getTransaction().begin();
@@ -66,13 +70,14 @@ public class EmployeeManager implements EmployeeRemote{
 	}
 
 	@Override
-	public int cwriteData(String username,String password,String email,String phone){
+	public int cwriteData(String username,String password,String email,String name,String location){
 		try {
 			Company E=new Company();
 			E.setEmail(email);
-			E.setName(username);
+			E.setUserName(username);
 			E.setPassword(password);
-			E.setPhone(phone);
+			E.setName(name);
+			E.setCompanyLocation(location);
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
 			EntityManager em = emf.createEntityManager();
 			em.getTransaction().begin();

@@ -8,10 +8,11 @@ import com.model.EmployeeRemote;
 
 @ManagedBean(name = "creg", eager = true)
 public class CAddDetails {
+	   String name;
 	   String username;
 	   String password;
 	   String email;
-	   String phone;
+	   String location;
 	@EJB(lookup = "java:global/CRM/EmployeeManager!com.model.EmployeeRemote")
 	EmployeeRemote ER;
 	public String getUsername() {
@@ -19,6 +20,12 @@ public class CAddDetails {
 	}
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public String getName() {
+		return username;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPassword() {
 		return password;
@@ -32,17 +39,17 @@ public class CAddDetails {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
-		return phone;
+	public void setLocation(String location) {
+		this.location = location;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public String getLocation() {
+		return location;
 	}
 	int l;
 	public void getList() {
 		try {
 			
-			l = ER.cwriteData(username,password,email,phone);
+			l = ER.cwriteData(username,password,email,name,location);
 			if(l==1)
 				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "regsuccess.xhtml");
 		}

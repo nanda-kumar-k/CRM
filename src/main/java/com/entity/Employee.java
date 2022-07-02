@@ -7,26 +7,42 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "example")
+@Table(name = "Client")
 public class Employee implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	String username;
-	
+	String name;
+	String eduinfo;
 	String password;
-	
 	String phoneno;
 	String email;
+	String joblocation;
+	String jobrole;
 
 
-	public String getName() {
+	public String getUserName() {
 		return username;
 	}
 
+	public void setUserName(String username) {
+		this.username = username;
+	}
+	public String getName() {
+		return name;
+	}
+
 	public void setName(String name) {
-		this.username = name;
+		this.name = name;
+	}
+	public String getEdu() {
+		return username;
+	}
+
+	public void setEdu(String eduinfo) {
+		this.eduinfo = eduinfo;
 	}
 
 	public String getPassword() {
@@ -51,6 +67,22 @@ public class Employee implements Serializable
 
 	public void setPhone(String phoneno) {
 		this.phoneno = phoneno;
+	}
+	
+	public String getJobRole() {
+		return jobrole;
+	}
+
+	public void setJobRole(String jobrole) {
+		this.jobrole = jobrole;
+	}
+	
+	public String getJobLocation() {
+		return joblocation;
+	}
+
+	public void setJobLocation(String joblocation) {
+		this.joblocation = joblocation;
 	}
 
 }

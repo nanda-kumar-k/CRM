@@ -1,0 +1,298 @@
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="static/style.css"/>
+    </h:head>
+    <h:body>
+        <div class="home-navbar">
+        <div class="home-login" id="homelogin">
+            <div class="login">
+                <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <br/>
+                <br/>
+                <h2>Client Login</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Username</p>
+                    <h:inputText value="#{login.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{login.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{login.getList()}" value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                
+            </div>
+        </div>
+        <div class="home-login" id="companylogin">
+            <div class="login">
+                <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <br/>
+                <br/>
+                <h2>Company Login</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Username</p>
+                    <h:inputText value="#{clogin.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{clogin.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{clogin.getList()}" value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                
+            </div>
+        </div>
+        <div class="home-login" id="jobregister">
+            <div class="login">
+                <div class="login-close" onclick="jobregisterfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <h2>Client Registration</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Name</p>
+                    <h:inputText value="#{reg.name}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Username</p>
+                    <h:inputText value="#{reg.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{reg.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <p>Email</p>
+                    <h:inputText value="#{reg.email}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Phone Number</p>
+                    <h:inputText value="#{reg.phone}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Education Details</p>
+                    <h:inputText value="#{reg.edu}" class="in" style="height: 60px;border-radius: 20px;"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Looking for Job Role</p>
+                    <select class="in">
+                        <option>Select Job Role</option>
+                        <option value="#{reg.jobRole}">hyderabad</option>
+                        <option value="#{reg.jobRole}">vijayawada</option>
+                        <option value="#{reg.jobRole}">hyderabad</option>
+                        <option value="#{reg.jobRole}">vijayawada</option>
+                    </select>
+                    <p>Looking for Job Location</p>
+                    <select class="in">
+                        <option>Select Location</option>
+                        <option value="#{reg.location}">hyderabad</option>
+                        <option value="#{reg.location}">vijayawada</option>
+                        <option value="#{reg.location}">hyderabad</option>
+                        <option value="#{reg.location}">vijayawada</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{reg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="home-login" id="companyregister">
+            <div class="login">
+                <div class="login-close" onclick="companyregisterfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <h2>Company Registration</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Comapany Name</p>
+                    <h:inputText value="#{creg.name}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Username</p>
+                    <h:inputText value="#{creg.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{creg.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <p>Email</p>
+                    <h:inputText value="#{creg.email}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Company Location</p>
+                    <select class="in">
+                        <option>Select Location</option>
+                        <option value="#{creg.location}">hyderabad</option>
+                        <option value="#{creg.location}">vijayawada</option>
+                        <option value="#{creg.location}">hyderabad</option>
+                        <option value="#{creg.location}">vijayawada</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{creg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <img src="static/images/logo.jpeg" />
+        <div class="home-btn" style="width: 70px; background-color: white;border-color: aqua;border-style: solid;border-width: 1px;" onclick="clientloginfun('open')">Login</div>
+        <div class="home-btn" style="width: 100px;" onclick="jobregisterfun('open')">Register</div>
+        <div class="home-btn" style=" background-color: white;border-color: aqua;border-style: solid;border-width: 1px;" onclick="companyloginfun('open')">Company Login</div>
+        <div class="home-btn" onclick="companyregisterfun('open')">Comapny Register</div>
+    </div>
+    <div class="home-info">
+        <h1>Find your dream job now</h1>
+        <p>5 lakh+ jobs for you to explore</p>
+    </div>
+    <form>
+        <div class="home-search-option">
+            <select id="role">
+                <option>Select Job Role</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+            </select>
+            <select id="location">
+                <option>Select Location</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+                <option>hyderabad</option>
+                <option>vijayawada</option>
+            </select>
+            <div class="home-btn" style="width: 100px;background-color: rgb(34, 152, 248)">Search</div>
+        </div>
+    </form>
+	<div class="jobs-container">
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+     </div>
+     <h3>Successfully Logged In as #{login.username}#{clogin.username}</h3>
+    <script>
+    function clientloginfun(attr){
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+        }
+    }
+    function companyloginfun(attr){
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companylogin").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companylogin").style.display = "none";
+        }
+    }
+    function jobregisterfun(attr) {
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("jobregister").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("jobregister").style.display = "none";
+        }
+    }
+    function companyregisterfun(attr) {
+        if(attr=="open"){
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companyregister").style.display = "block";
+        }
+        else{
+            document.getElementById("homelogin").style.display = "none";
+            document.getElementById("companyregister").style.display = "none";
+        }
+    }
+    </script>
+    
+    </h:body>
+</html>
