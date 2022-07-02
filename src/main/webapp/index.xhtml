@@ -241,7 +241,7 @@
             <p style="margin-bottom: 5px;">Job Description</p>
             <p style="margin-bottom: 5px;">Email</p>
         </div>
-        <c:if test="${'#{login.username}' != 'null'}">
+        
          <h:dataTable value="#{allget.list}" var="row">
 			<h:column>
 				<f:facet name="header">Company Name</f:facet>
@@ -256,7 +256,7 @@
 				#{row.companyLocation}
 			</h:column>
 		</h:dataTable>
-        </c:if>
+        
 		
      </div>
      <h3>Successfully Logged In as #{login.username}#{clogin.username}</h3>
