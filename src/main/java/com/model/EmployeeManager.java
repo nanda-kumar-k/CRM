@@ -10,8 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
+import com.entity.ComJob;
 import com.entity.Company;
+import com.entity.CompanyJob;
 import com.entity.Employee;
 import javax.persistence.Query;
 
@@ -121,17 +122,131 @@ public class EmployeeManager implements EmployeeRemote{
 		}
 		return 0;
 	}
-	public List<Company> getall(){
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CompanyJob> getall(String jobrole){
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+//		EntityManager em = emf.createEntityManager();
+//		em.getTransaction().begin();
+//		Query qry=em.createQuery("select e from Company e where e.companylocation=?1");
+//		qry.setParameter(1, "Vza");
+//		@SuppressWarnings("unchecked")
+//		List<Company> L = qry.getResultList();
+//		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrr");
+//		System.out.println(L);
+//		em.getTransaction().commit();
+//		em.close();
+//		emf.close();
+////		return L;
+//		
+//		List<ComJob> J = null;
+////		EntityManagerFactory emf1 = Persistence.createEntityManagerFactory("CRM");
+////		EntityManager em1 = emf.createEntityManager();
+////		em1.getTransaction().begin();
+////		Query qry1=em.createQuery("select e from Company e");
+//		//qry.setParameter(1, location);
+//		//@SuppressWarnings("unchecked")
+////		List<Company> L = qry.getResultList();
+////		System.out.println(qry);
+////		System.out.println("ahjdgajhsgdjhattttttttttttttttttttttttuyygd");
+////		System.out.println(L);
+//		for(int i=0;i<L.size();i++)
+//		{
+//			EntityManagerFactory emf1 = Persistence.createEntityManagerFactory("CRM");
+//			EntityManager em1 = emf1.createEntityManager();
+//			em1.getTransaction().begin();
+//			ComJob D = null;
+//			Query qry1=em.createQuery("select e from CompanyJob e where e.username=?1 and e.jobrole=?2",CompanyJob.class);
+//			Company Q=L.get(i);
+//			qry1.setParameter(1, Q.getUserName());
+//			qry1.setParameter(2, "GameDeveloper");
+//			System.out.println(D);
+//			CompanyJob LL=(CompanyJob)qry1.getSingleResult();
+//			System.out.println(LL);
+//			if(LL!=null) {
+//				D.setComname(Q.getName());
+//				D.setComloc(Q.getCompanyLocation());
+//				D.setComemail(Q.getEmail());
+//				D.setJobrole(LL.getJobrole());
+//				D.setDesofjob(LL.getDesofjob());
+//				D.setNoofjobs(LL.getNoofjobs());
+//				D.setSalary(LL.getSalary());
+//				J.add(D);
+//				ComJob obj = J.get(i);
+//				System.out.println(obj.getJobrole());
+//			}
+//			em.getTransaction().commit();
+//			em.close();
+//			emf.close();
+//			
+//		}
+//		System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+//		System.out.println(J);
+//		return L;
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+//		EntityManager em = emf.createEntityManager();
+//		em.getTransaction().begin();
+//		Query qry=em.createQuery("select e,b from Company e, CompanyJob b"+" where e.companylocation=?1 and b.jobrole=?2");
+//		qry.setParameter(1, location);
+//		qry.setParameter(2, jobrole);
+//		List<ComJob> K=qry.getResultList();
+//		em.getTransaction().commit();
+//		em.close();
+//		emf.close();
+//		return K;
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		Query qry=em.createQuery("select e from Company e");
-		@SuppressWarnings("unchecked")
-		List<Company> L = qry.getResultList();
+		Query qry=em.createQuery("select b from CompanyJob b where b.jobrole=?1");
+		qry.setParameter(1, jobrole);
+		List<CompanyJob> K=qry.getResultList();
 		em.getTransaction().commit();
 		em.close();
 		emf.close();
-		return L;
+		return K;
 	}
+	
+	int i=2;
+	@Override
+	public int writeData111(int noofjob,String desofjob,double salary,String jobrole,String username){
+		try {
+			i+=1;
+			CompanyJob E=new CompanyJob();
+		    E.setId(i);
+			E.setDesofjob(desofjob);
+			E.setJobrole(jobrole);
+			E.setNoofjobs(noofjob);
+			E.setSalary(salary);
+			E.setUserName(username);
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+			EntityManager em = emf.createEntityManager();
+			em.getTransaction().begin();
+			em.persist(E);
+			em.getTransaction().commit();
+			em.close();
+			emf.close();
+			return 1;
+	       }
+		catch(Exception e) {
+			
+		}
+		return 0;
+	}
+	
+	@Override
+	public List<Employee> clientget(){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Query qry=em.createQuery("select b from Employee b");
+		@SuppressWarnings("unchecked")
+		List<Employee> K=qry.getResultList();
+		em.getTransaction().commit();
+		em.close();
+		emf.close();
+		return K;
+	}
+	
 	
 }
