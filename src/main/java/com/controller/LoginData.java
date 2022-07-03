@@ -30,7 +30,7 @@ public class LoginData {
 		try {
 			l = ER.loginData(username,password);
 			if(l==1)
-				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.jsf");
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "client.xhtml");
 		}
 			catch (Exception e) {
              System.out.println(e.getMessage());

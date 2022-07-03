@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+  <head>
+    <title>Example Web Page</title>
+    <link rel="stylesheet" type="text/css" href="static/company.css"/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    
+    
+  </head>
+  <body>
+    <div class="home-navbar">
+        <div class="home-login" id="homelogin">
+            <div class="login">
+                <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <br/>
+                <br/>
+                <h2>Client Login</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Username</p>
+                    <h:inputText value="#{login.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{login.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{login.getList()}" value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+        <div class="home-login" id="companylogin">
+            <div class="login">
+                <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <br/>
+                <br/>
+                <h2>Company Login</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Username</p>
+                    <h:inputText value="#{clogin.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{clogin.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{clogin.getList()}" value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+        <div class="home-login" id="jobregister">
+            <div class="login">
+                <div class="login-close" onclick="jobregisterfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <h2>Client Registration</h2>
+                <br/>
+               <h:form class="form">
+                    <p>Name</p>
+                    <h:inputText value="#{reg.name}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Username</p>
+                    <h:inputText value="#{reg.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{reg.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <p>Email</p>
+                    <h:inputText value="#{reg.email}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Phone Number</p>
+                    <h:inputText value="#{reg.phone}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Education Details</p>
+                    <h:inputText value="#{reg.edu}" class="in" style="height: 60px;border-radius: 20px;"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Looking for Job Role</p>
+                    <h:selectOneMenu value="#{reg.jobRole}" class="in" >
+                    	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
+                    	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
+                    	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
+                    	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
+                    	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
+                    	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
+                    	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
+                    	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
+                    	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
+                    	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
+                    	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
+                    	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
+                    	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
+                    	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
+                    </h:selectOneMenu>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p>Job Location</p>
+                    <h:selectOneMenu value="#{reg.location}" class="in" >
+                    	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
+                    	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
+                    	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
+                    	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
+                    	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
+                    	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
+                    	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
+                    	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
+                    	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
+                    	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
+                    	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
+                    	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
+                    	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
+                    </h:selectOneMenu>
+                    <h:commandButton action="#{reg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="home-login" id="companyregister">
+            <div class="login">
+                <div class="login-close" onclick="companyregisterfun('close')" style="cursor: pointer;">
+                    &#10060;
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Find Job</h1>
+                <p>Number One online job listing</p>
+                <h2>Company Registration</h2>
+                <br/>
+                <h:form class="form">
+                    <p>Comapany Name</p>
+                    <h:inputText value="#{creg.name}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Username</p>
+                    <h:inputText value="#{creg.username}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Password</p>
+                    <h:inputSecret value="#{creg.password}" class="in"></h:inputSecret>
+                    <br/>
+                    <br/>
+                    <p>Email</p>
+                    <h:inputText value="#{creg.email}" class="in"></h:inputText>
+                    <br/>
+                    <br/>
+                    <p>Company Location</p>
+                    <h:selectOneMenu value="#{creg.location}" class="in" >
+                    	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
+                    	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
+                    	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
+                    	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
+                    	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
+                    	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
+                    	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
+                    	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
+                    	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
+                    	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
+                    	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
+                    	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
+                    	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
+                    </h:selectOneMenu>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton action="#{creg.getList()}" value="Register" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                </h:form>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <img src="static/images/logo.png" />
+        <div class="home-btn" style="width: 70px; background-color: white;border-color: aqua;border-style: solid;border-width: 1px;" onclick="clientloginfun('open')">Login</div>
+        <div class="home-btn" style="width: 100px;" onclick="jobregisterfun('open')">Register</div>
+        <div class="home-btn" style=" background-color: white;border-color: aqua;border-style: solid;border-width: 1px;">Logout</div>
+        <div class="home-btn" onclick="companyregisterfun('open')">Comapny Register</div>
+    </div>
+    <hr/>
+    <br/>
+    
+<div class="add-container">
+        <div class="img-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="static/images/img6.jpeg"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="static/images/img8.jpeg"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="static/images/img7.jpeg"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="static/images/img5.jpeg"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="static/images/img4.jpeg"/>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <br/>
+        <h1 style="height: 30px;">Profile:</h1>
+        <br/>
+    </div>
+    <div class="client-profile-container">
+        <div class="block-block">
+        <div class="client-row">
+            <h:dataTable value="#{clientget.list}" var="row">
+			<h:column>
+				<f:facet name="header">Emp Name</f:facet>
+				#{row.name}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Emp Email</f:facet>
+				#{row.email}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Job Location</f:facet>
+				#{row.jobLocation}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Education</f:facet>
+				#{row.edu}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Phone No</f:facet>
+				#{row.phone}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Job Role</f:facet>
+				#{row.jobRole}
+			</h:column>
+		</h:dataTable>
+    </div>
+    </div>
+    </div>
+    <br/>
+    <br/>
+    <h1 style="margin-left: 100px;">
+        Current Jobs Looking For YOU
+    </h1>
+   <hr/>
+    <div class="jobs-container">
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+            <p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+        <div class="jobs-inner">
+            <h2>Company Name</h2>
+            <h4 style="margin-bottom: 10px;">Job Role</h4>
+            <p style="margin-bottom: 5px;">Job Location</p>
+
+<p style="margin-bottom: 5px;">No of jobs present</p>
+            <p style="margin-bottom: 5px;">Job Decription</p>
+            <p style="margin-bottom: 5px;">Email</p>
+        </div>
+    </div>
+    <script>
+        function clientloginfun(attr){
+            if(attr=="open"){
+                document.getElementById("homelogin").style.display = "block";
+            }
+            else{
+                document.getElementById("homelogin").style.display = "none";
+            }
+        }
+        function companyloginfun(attr){
+            if(attr=="open"){
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("companylogin").style.display = "block";
+            }
+            else{
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("companylogin").style.display = "none";
+            }
+        }
+        function jobregisterfun(attr) {
+            if(attr=="open"){
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("jobregister").style.display = "block";
+            }
+            else{
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("jobregister").style.display = "none";
+            }
+        }
+        function companyregisterfun(attr) {
+            if(attr=="open"){
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("companyregister").style.display = "block";
+            }
+            else{
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("companyregister").style.display = "none";
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+  </body>
+</html>

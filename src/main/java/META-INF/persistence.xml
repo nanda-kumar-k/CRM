@@ -4,5 +4,6 @@
 		<non-jta-data-source>java:/MySqlDS</non-jta-data-source>
 		<class>com.entity.Employee</class>
 		<class>com.entity.Company</class>
+		<class>com.entity.CompanyJob</class>
 	</persistence-unit>
 </persistence>
