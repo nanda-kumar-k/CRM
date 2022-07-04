@@ -248,32 +248,12 @@
     <div class="client-profile-container">
         <div class="block-block">
         <div class="client-row">
-            <h:dataTable value="#{clientget.list}" var="row">
-			<h:column>
-				<f:facet name="header">Emp Name</f:facet>
-				#{row.name}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Emp Email</f:facet>
-				#{row.email}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Job Location</f:facet>
-				#{row.jobLocation}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Education</f:facet>
-				#{row.edu}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Phone No</f:facet>
-				#{row.phone}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Job Role</f:facet>
-				#{row.jobRole}
-			</h:column>
-		</h:dataTable>
+            <h3>Name : #{login.name}</h3>
+            <h3>Edu Info : #{login.eduinfo}</h3>
+            <h3>Phone No. : #{login.phoneno}</h3>
+            <h3>Email : #{login.email}</h3>
+            <h3>Job Location : #{login.joblocation}</h3>
+            <h3>Job Role : #{login.jobrole}</h3>
     </div>
     </div>
     </div>

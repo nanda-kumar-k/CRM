@@ -48,7 +48,7 @@ public class EmployeeManager implements EmployeeRemote{
 	}
 	
 	@Override
-	public int loginData(String username,String password) {
+	public Employee loginData(String username,String password) {
 		
 		try {
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("CRM");
@@ -56,7 +56,7 @@ public class EmployeeManager implements EmployeeRemote{
 			em.getTransaction().begin();
 			Employee E = em.find(Employee.class, username);
 			if(E.getPassword().equals(password))
-				return 1;
+				return E;
 			//Query qry = em.createQuery("select e from example e where e.username=?1 and e.password=?2");
 			//qry.setParameter(1,username);
 			//qry.setParameter(2, password);
@@ -70,7 +70,7 @@ public class EmployeeManager implements EmployeeRemote{
 		catch(Exception e) {
 			
 		}
-		return 0;
+		return null;
 	}
 
 	@Override
