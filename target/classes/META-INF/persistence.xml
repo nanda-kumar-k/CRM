@@ -6,5 +6,6 @@
 		<class>model.ClientJob</class>
 		<class>model.Company</class>
 		<class>model.CompanyJob</class>
+		<class>model.CrmAdmin</class>
 	</persistence-unit>
 </persistence>
