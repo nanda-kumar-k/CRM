@@ -47,4 +47,111 @@
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 		<nature>org.jboss.tools.jsf.jsfnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/main/webapp/static</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/static/AdminLogin.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/AdminLogin.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/ClientJob.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/ClientJob.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/ClientProfile.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/ClientProfile.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/ClientSignUp.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/ClientSignUp.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/CompanyJob.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/CompanyJob.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/dashboard.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/dashboard.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/dashboardclient.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/dashboardclient.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/home.css</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/home.css</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img1.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img1.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img2.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img2.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img3.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img3.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img4.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img4.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img5.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img5.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img6.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img6.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img7.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img7.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/img8.png</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/img8.png</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/logo.png</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/logo.png</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/profile.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/profile.jpg</location>
+		</link>
+		<link>
+			<name>src/main/webapp/static/images/profilebackground.jpg</name>
+			<type>1</type>
+			<location>D:/K L UNIVERITY/Projects/CMS-EP/example/new/static/images/profilebackground.jpg</location>
+		</link>
+	</linkedResources>
 </projectDescription>
