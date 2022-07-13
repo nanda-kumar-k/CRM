@@ -7,9 +7,7 @@ import java.util.Scanner;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
-import controller.ClientSignupController;
 import controller.CompanySigupController;
-import model.Client;
 import model.Company;
 
 @ManagedBean(name = "CoSignup", eager = true)
@@ -57,10 +55,11 @@ public class CompanySignupBean {
 		try {
 			Company cs = new Company();
 			CompanySigupController csc = new CompanySigupController();
-			File myObj = new File("clinet.txt");
+			File myObj = new File("C:\\Users\\mvr_n\\workspace\\CRM\\client.txt");
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
+		        System.out.println(data);
 		        user = data;
 		        break;
 		      }

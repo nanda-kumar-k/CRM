@@ -9,10 +9,12 @@ import java.util.Scanner;
 public class ClientFile {
 	public static void main(String[] args) {
 		try {
-		      FileWriter myWriter = new FileWriter("filename.txt");
-		      myWriter.write(" it is fun enough!");
-		      myWriter.close();
-		      System.out.println("Successfully wrote to the file.");
+		      File myObj = new File("client.txt");
+		      if (myObj.createNewFile()) {
+		        System.out.println("File created: " + myObj.getAbsolutePath());
+		      } else {
+		        System.out.println("File already exists." + myObj.getAbsolutePath());
+		      }
 		    } catch (IOException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
