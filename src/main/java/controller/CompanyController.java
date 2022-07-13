@@ -2,7 +2,9 @@ package controller;
 
 import java.util.List;
 
-
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,10 +14,13 @@ import javax.persistence.criteria.Join;
 import model.Company;
 import model.CompanyJob;
 
+
+@Stateless
 public class CompanyController {
 	
 	private EntityManager entityManager;
 	private EntityManagerFactory emf;
+	
 
 	public CompanyController() {
 	    this.emf = Persistence.createEntityManagerFactory("example");

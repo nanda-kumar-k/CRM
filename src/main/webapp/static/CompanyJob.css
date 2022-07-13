@@ -1,0 +1,447 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+.crm-navbar-container {
+    border-bottom: 1px solid #e5e5e5;
+    /* background: #3498db;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    position: relative;
+    z-index: 1000;
+}
+.crm-navbar-container .crm-navbar-inner {
+    border-bottom: 1px solid #e5e5e5;
+    background: #3498db;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 85vw;
+    padding: 0 0 0 15vw ;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+   
+}
+.crm-navbar-container .crm-navbar-options {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.home-login {
+  position: absolute;
+  top: 0%;
+  right: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: saturate(10%) blur(0.1px);
+}
+.login {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  height: 100vh;
+  top: 0px;
+  right: 0px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: saturate(180%) blur(10px);
+  color: white;
+  overflow-y: scroll;
+}
+.login img {
+  width: 200px;
+  height: 400px;
+}
+.login-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.login #in {
+  width: 300px;
+  height: 30px;
+  border-radius: 50px;
+}
+.login #form p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-radius: 50px;
+}
+
+.crm-navbar-inner img{
+    width: 120px;
+    height: 60px;
+    margin-right: 25vw;
+}
+.home-btn {
+    width: 150px;
+    height: 40px;
+    /* background-color: rgb(255, 135, 60); */
+    margin-left: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 0.2px;
+    border-color: #75bcec;
+    color: #e5e5e5;
+}
+.home-btn:hover{
+    border-radius: 20px;
+    /*background: white;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.crm-profile-container {
+    width: 100vw;
+    height: 100%;
+    /* background: #5f2020; */
+}
+.crm-profile-container .crm-profile-top-img{
+    width: 100vw;
+    height: 35vh;
+    background: #3078b8;
+}
+.crm-profile-top-img img{
+    width: 100%;
+    height: 100%;
+}
+.crm-profile-container .crm-profile-img-container{
+    width: 90vw;
+    height: 100%;
+    padding: 0 5vw;
+    display: flex;
+    /* background: black; */
+}
+.crm-profile-container .crm-img-container-inner {
+    width: 25vw;
+    height: 100%;
+    /* background: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.crm-img-container-inner .crm-contact-info {
+    /* margin-top: 23px; */
+    margin-left: 5vw;
+}
+.crm-img-container-inner .crm-profile-img{
+    width: 15vw;
+    height: 30vh;
+    border-radius: 50%;
+    border-color: #75bcec;
+    /* background: orange; */
+    background: white;
+    margin-top: -15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.crm-profile-img img{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+.crm-profile-info {
+    width: 55vw;
+    height: 100%;
+    padding: 0 5vw 0 0;
+    /* background: orange; */
+}
+.crm-profile-info .crm-profile-links{
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.crm-job-offer-container{
+    width: 80vw;
+    height: 100%;
+    padding: 0 10vw;
+    /* background: #5f2020; */
+}
+.jobs-container {
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .jobs-container .jobs-inner {
+    margin-bottom: 30px;
+    width: 16vw;
+    height: 42vh;
+    padding: 2vh 1vw;
+    /* border-style: solid; */
+    border-radius: 20px;
+    /* border-width: 1px; */
+    overflow-x: scroll;
+    position: relative;
+    /* background: linear-gradient(rgb(168, 247, 247),white); */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+  }
+  .jobs-container .jobs-inner:hover{
+    background: linear-gradient(rgb(168, 247, 247),white);
+  
+  }
+  
+  .jobs-inner td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 2px 20px 2px 0px;
+  }
+  
+  .jobs-inner #apply-btn{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+  }
+.crm-add-offer-container{
+    width: 70vw;
+    height: 85vh;
+    padding: 0 15vw;
+    /* background: #5f2020; */
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.crm-add-offer-container .crm-slideshow {
+    width: 35vw;
+    height: 40vh;
+    margin-top: 22vh;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.swiper {
+    width: 35vw;
+    height: 40vh;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+  }
+.crm-newrole-conatainer {
+    width: 35vw;
+    height: 80vh;
+    padding: 2vh 5vw;
+    /* background-color: red; */
+    border-radius: 50px;
+    background: linear-gradient(rgb(168, 247, 247),white);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.crm-newrole-conatainer .forms p{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.crm-newrole-conatainer .forms #crm-add{
+    width: 25vw;
+    height: 5vh;
+    border-radius: 5px;
+}
+footer{
+
+	bottom: 0;
+}
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.main {
+		line-height: normal;
+		font-size: auto;
+	}
+
+}

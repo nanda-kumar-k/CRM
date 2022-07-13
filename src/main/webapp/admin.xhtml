@@ -1,0 +1,27 @@
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+	<title>Example Web Page</title>
+    <link rel="stylesheet" type="text/css" href="static/AdminLogin.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+</head>
+<body>
+	<div class="admin-container">
+            <div class="admin-inner">
+                <div class="admin-title">
+                    <h2>Admin Login</h2>
+                </div>
+                <h:form class="form">
+                    <p>Username:</p>
+                    <h:inputText value="#{admin.username}"  class="admins" ></h:inputText>
+                    <br/>
+                    <p>Password:</p>
+                    <h:inputText  value="#{admin.password}" class="admins" ></h:inputText>
+                    <h:commandButton class="home-btn" action="#{admin.calllogin()}" value="Login" ></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+</body>
+</html>
