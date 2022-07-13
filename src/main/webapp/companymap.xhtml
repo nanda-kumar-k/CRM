@@ -20,8 +20,8 @@
 		
 		       <h:inputHidden id="hidden2" value="#{CoSignup.longitude}" />
 		
-		       <h:commandButton value="submit" action="#{CoSignup.addlonglat()}" 
-		                               onclick="setHiddenValue('this is hidden2');" />
+		       <h:commandButton value="submit" action="#{CoSignup.addlonglat()}" ></h:commandButton>
+		                                
      		</h:form>
         </div>
         <div class="map-zoom">
@@ -58,6 +58,8 @@
             lat = position.coords.latitude
             long = position.coords.longitude
             accuracy = position.coords.accuracy
+            document.getElementById('myForm:hidden1').value = lat;
+      	    document.getElementById('myForm:hidden2').value = long;
             console.log("Your coordinate is: Lat: " + lat + " Long: " + long + " Accuracy: " + accuracy)
         }
 
@@ -87,18 +89,8 @@
         },4000);
         }
 
-        function setHiddenValue(new_value){
-			
-   	     document.getElementById('myForm:hidden2').value = new_value;
-   			
-   	   }
-
-        function setHiddenValue(new_value){
-			
-   	     document.getElementById('myForm:hidden1').value = lat;
-   	     document.getElementById('myForm:hidden2').value = long;
-   			
-   	   }
+        
+       
 
     </script>
     
