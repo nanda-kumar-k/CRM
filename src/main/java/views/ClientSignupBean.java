@@ -1,13 +1,15 @@
-package model;
+package views;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import controller.ClientSignupController;
+import model.Client;
 
-@Entity
-@Table(name = "client")
-public class Client {
-	@Id
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+
+
+@ManagedBean(name = "ClSignup", eager = true)
+public class ClientSignupBean {
 	String username;
 	String password;
 	String first_name;
@@ -28,6 +30,40 @@ public class Client {
 	float salary_expecting;
 	String preferred_company;
 	
+	
+	
+	int l;
+	public void signupClient() {
+		try {
+			ClientSignupController cs  = new ClientSignupController();
+			Client c = new Client();
+			c.setUsername(username);
+			c.setPassword(password);
+			c.setFirst_name(first_name);
+			c.setLast_name(last_name);
+			c.setDob(dob);
+			c.setEducation_information(education_information);
+			c.setCv_link(cv_link);
+			c.setLinkedin_link(linkedin_link);
+			c.setGithub_link(github_link);
+			c.setStop_stack_link(stop_stack_link);
+			c.setProjects(projects);
+			c.setSkills(skills);
+			c.setPhone_number(phone_number);
+			c.setEmail_id(email_id);
+			c.setExperience(experience);
+			c.setPreferred_location(preferred_location);
+			c.setPreferred_role(preferred_role);
+			c.setSalary_expecting(salary_expecting);
+			c.setPreferred_company(preferred_company);
+			l = cs.signup(c);
+			if(l==1)
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
+		}
+			catch (Exception e) {
+             System.out.println(e.getMessage());
+		}
+	}
 	
 	
 	public String getUsername() {
@@ -144,5 +180,4 @@ public class Client {
 	public void setPreferred_company(String preferred_company) {
 		this.preferred_company = preferred_company;
 	}
-	
 }
