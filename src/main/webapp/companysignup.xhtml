@@ -31,15 +31,15 @@
                     <br/>
                     <h:form class="form">
                         <p>Username</p>
-                        <h:inputText  name="username"  ></h:inputText>
+                        <h:inputText value="#{ClLogin.username}"  name="username"  ></h:inputText>
                         <br/>
                         <br/>
                         <p>Password</p>
-                        <h:inputText  name="password"  ></h:inputText>
+                        <h:inputText value="#{ClLogin.password}"  name="password"  ></h:inputText>
                         <br />
                         <br />
                         <br />
-                        <h:commandButton  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                        <h:commandButton action="#{ClLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
                     </h:form>
                 </div>
             </div>
@@ -54,18 +54,18 @@
                     <br/>
                     <h2 style="margin-bottom: 30px;">Company Login</h2>
                     <br/>
-                    <form  id="form">
+                    <h:form class="form">
                         <p>Username</p>
-                        <input type="text" name="username" id="in" />
+                        <h:inputText value="#{CoLogin.username}"  name="username"  ></h:inputText>
                         <br/>
                         <br/>
                         <p>Password</p>
-                        <input type="password" name="password" id="in" />
+                        <h:inputText value="#{CoLogin.password}"  name="password"  ></h:inputText>
                         <br />
                         <br />
                         <br />
-                        <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                    </form>
+                        <h:commandButton action="#{CoLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;"></h:commandButton>
+                    </h:form>
                 </div>
             </div>
             </div>

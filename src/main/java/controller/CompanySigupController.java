@@ -21,6 +21,16 @@ public class CompanySigupController {
 		em.getTransaction().commit();
 		return 1;
 	}
+	
+	
+	public int updatelonglat(Company company) {
+		Company f = em.find(Company.class, company.getUsername());
+        em.getTransaction().begin();
+        f.setLatitude(company.getLatitude());
+        f.setLongitude(company.getLongitude());
+        em.getTransaction().commit();
+        return 1;
+    }
 
 	
 }
