@@ -1,5 +1,9 @@
 package views;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Scanner;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
@@ -25,7 +29,6 @@ public class CompanySignupBean {
 		try {
 			Company cs = new Company();
 			CompanySigupController csc = new CompanySigupController();
-			
 			cs.setUsername(username);
 			cs.setPassword(password);
 			cs.setName(name);
@@ -35,6 +38,37 @@ public class CompanySignupBean {
 			cs.setLongitude(longitude);
 			cs.setLatitude(latitude);
 			l = csc.signup(cs);
+			if(l==1) {
+				FileWriter myWriter = new FileWriter("client.txt");
+			    myWriter.write(username);
+			    myWriter.close();
+			    System.out.println("Successfully wrote to the file.");
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "companymap.xhtml");
+		}
+		}
+			catch (Exception e) {
+             System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	public void addlonglat() {
+		String user = null;
+		try {
+			Company cs = new Company();
+			CompanySigupController csc = new CompanySigupController();
+			File myObj = new File("clinet.txt");
+		      Scanner myReader = new Scanner(myObj);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
+		        user = data;
+		        break;
+		      }
+		      myReader.close();
+			cs.setUsername(user);
+			cs.setLongitude(longitude);
+			cs.setLatitude(latitude);
+			l = csc.updatelonglat(cs);
 			if(l==1)
 				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
 		}
@@ -42,6 +76,8 @@ public class CompanySignupBean {
              System.out.println(e.getMessage());
 		}
 	}
+	
+	
 	
 	public String getUsername() {
 		return username;

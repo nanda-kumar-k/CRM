@@ -65,7 +65,7 @@
   top: 10px;
   right: 10px;
 }
-.login #in {
+.login input {
   width: 300px;
   height: 30px;
   border-radius: 50px;
@@ -162,17 +162,26 @@
     background: linear-gradient(rgb(168, 247, 247),white);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.forms p{
+.crm-signup-inner p{
     font-size: 18px;
     margin-bottom: 10px;
 }
-.forms #crm-signin {
+.crm-signup-inner input {
     width: 24vw;
     height: 4vh;
     border-radius: 5px;
     margin-bottom: 15px;
     /* background: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.crm-signup-inner select {
+	width: 24vw;
+    height: 4vh;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    /* background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
 }
 
 footer{
