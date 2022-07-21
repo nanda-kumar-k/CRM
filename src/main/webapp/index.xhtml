@@ -17,9 +17,17 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
             <div class="crm-navbar-inner">
                 <img src="static/images/logo.png" />
                 <div class="home-btn" style="width: 70px;" onclick="clientloginfun('open')">Login</div>
-                <div class="home-btn" style="width: 100px;" onclick="jobregisterfun('open')">Register</div>
+                <div class="home-btn" style="width: 100px;">
+                <h:form>
+         			<h:link value = "Register" outcome = "clientsignup" style="text-decoration: none;color: white;"/>
+      			</h:form>
+                </div>
                 <div class="home-btn" onclick="companyloginfun('open')">Company Login</div>
-                <div class="home-btn" onclick="companyregisterfun('open')">Comapny Register</div>
+                <div class="home-btn" >
+                <h:form>
+         			<h:link value = "Comapny Register" outcome = "companysignup" style="text-decoration: none;color: white;"/>
+      			</h:form>
+                </div>
             </div>
             <div class="crm-navbar-options">
               <div class="home-login" id="homelogin">
@@ -33,18 +41,18 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                     <br/>
                     <h2 style="margin-bottom: 30px;">Client Login</h2>
                     <br/>
-                    <form id="form">
+                    <h:form class="form">
                         <p>Username</p>
-                        <input type="text" name="username" id="in" />
+                        <h:inputText value="#{ClLogin.username}"  name="username" class="inp" ></h:inputText>
                         <br/>
                         <br/>
                         <p>Password</p>
-                        <input type="password" name="password" id="in" />
+                        <h:inputText value="#{ClLogin.password}"  name="password" class="inp" ></h:inputText>
                         <br />
                         <br />
                         <br />
-                        <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                    </form>
+                        <h:commandButton action="#{ClLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+                    </h:form>
                 </div>
             </div>
             <div class="home-login" id="companylogin">
@@ -58,18 +66,18 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                     <br/>
                     <h2 style="margin-bottom: 30px;">Company Login</h2>
                     <br/>
-                    <form  id="form">
+                    <h:form class="form">
                         <p>Username</p>
-                        <input type="text" name="username" id="in" />
+                        <h:inputText value="#{CoLogin.username}"  name="username" class="inp" ></h:inputText>
                         <br/>
                         <br/>
                         <p>Password</p>
-                        <input type="password" name="password" id="in" />
-                        <br/>
-                        <br/>
-                        <br/>
-                        <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                    </form>
+                        <h:inputText value="#{CoLogin.password}"  name="password" class="inp" ></h:inputText>
+                        <br />
+                        <br />
+                        <br />
+                        <h:commandButton action="#{CoLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+                    </h:form>
                 </div>
             </div>
             </div>
@@ -105,7 +113,7 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
         <h:form>
             <div class="home-search-option">
             
-            	<h:selectOneMenu value="#{Homeitems.job_role}" id="role" >
+            	<h:selectOneMenu value="#{Homeitems.job_role}" class="role" >
                    	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
                    	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
                    	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
@@ -122,7 +130,7 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                    	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
                    	<f:selectItem itemValue = "web development" itemLabel = "web development" />
             </h:selectOneMenu>
-                <h:selectOneMenu value="#{Homeitems.location}" id="location" >
+                <h:selectOneMenu value="#{Homeitems.location}" class="location" >
                  	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
                  	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
                  	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
@@ -138,10 +146,11 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                  	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
                  	<f:selectItem itemValue = "hyb" itemLabel = "hyb" />
              </h:selectOneMenu>
-                <h:commandButton action="#{Homeitems.findHome()}" value="Search" style="width: 100px;background-color: rgb(34, 152, 248)"></h:commandButton>
+                <h:commandButton action="#{Homeitems.findHome()}" value="Search" class="home-btn"  style="width: 100px;background-color: rgb(34, 152, 248)"></h:commandButton>
             </div>
         </h:form>
-
+		<br/>
+		
       <div class="jobs-container">
       <c:forEach var="cap" items="#{Homeitems.findHome()}">
           <div class="jobs-inner">

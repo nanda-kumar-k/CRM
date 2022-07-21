@@ -65,12 +65,12 @@
   top: 10px;
   right: 10px;
 }
-.login #in {
+.login .inp {
   width: 300px;
   height: 30px;
   border-radius: 50px;
 }
-.login #form p {
+.login .form p {
   margin-bottom: 10px;
   font-size: 18px;
   border-radius: 50px;
@@ -164,7 +164,7 @@
     justify-content: center;
     align-items: center;
 }
-.home-search-option #role{
+.home-search-option .role{
     width: 30vw;
     height: 5vh;
     font-size: 20px;
@@ -173,7 +173,7 @@
     border-radius: 50px;
     color: black;
 }
-.home-search-option #location{
+.home-search-option .location{
     width: 15vw;
     height: 5vh;
     font-size: 20px;
@@ -191,6 +191,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow-y: scroll;
 }
 .jobs-container .jobs-inner {
   margin-bottom: 30px;
