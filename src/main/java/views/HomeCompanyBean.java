@@ -2,6 +2,7 @@ package views;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
 import controller.HomeCompanyController;
@@ -16,6 +17,7 @@ public class HomeCompanyBean {
 	
 	
 	int l;
+
 	List<HomeCompany> L;
 	public List<HomeCompany> findHome() {
 		try {
@@ -38,6 +40,8 @@ public class HomeCompanyBean {
 		}
 		return L;
 	}
+	
+	
 	
 	
 	public String getLocation() {

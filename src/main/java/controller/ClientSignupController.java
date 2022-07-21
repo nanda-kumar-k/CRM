@@ -21,6 +21,9 @@ public class ClientSignupController {
 		em.getTransaction().begin();
 		em.persist(client);
 		em.getTransaction().commit();
+		
+		em.close();
+		emf.close();
 		return 1;
 	}
 

@@ -19,6 +19,8 @@ public class CompanySigupController {
 		em.getTransaction().begin();
 		em.persist(company);
 		em.getTransaction().commit();
+		em.close();
+		emf.close();
 		return 1;
 	}
 	
@@ -29,6 +31,8 @@ public class CompanySigupController {
         f.setLatitude(company.getLatitude());
         f.setLongitude(company.getLongitude());
         em.getTransaction().commit();
+        em.close();
+		emf.close();
         return 1;
     }
 

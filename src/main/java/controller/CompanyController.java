@@ -31,6 +31,8 @@ public class CompanyController {
 	    entityManager.getTransaction().begin();
 	    entityManager.persist(company);
 	    entityManager.getTransaction().commit();
+	    entityManager.close();
+		emf.close();
 	    return company;
 	}
 	
@@ -38,6 +40,8 @@ public class CompanyController {
 	    entityManager.getTransaction().begin();
 	    entityManager.persist(companyJob);
 	    entityManager.getTransaction().commit();
+	    entityManager.close();
+		emf.close();
 	    return companyJob;
 	}
 	
@@ -49,6 +53,9 @@ public class CompanyController {
 		System.out.println(query.getResultList());
 		List<CompanyJob> data = query.getResultList();
 		System.out.println(data.get(1).getJob_role());
+		
+		entityManager.close();
+		emf.close();
 	  }
 	
 
