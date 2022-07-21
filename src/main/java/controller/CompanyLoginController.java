@@ -20,8 +20,12 @@ public class CompanyLoginController {
 	public int login(String username, String password) {	
 		Company C = em.find(Company.class, username);
 		if(C.getPassword().equals(password)) {
+			em.close();
+			emf.close();
 			return 1;
 		}
+		em.close();
+		emf.close();
 		return 0;
 	}
 }

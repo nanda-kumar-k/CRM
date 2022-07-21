@@ -8,6 +8,8 @@ public class HomeCompany {
 	float salary;
 	int number_of_vacancy;
 	String email;
+
+	
 	
 	
 	public String getName() {

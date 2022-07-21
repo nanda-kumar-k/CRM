@@ -19,8 +19,12 @@ public class ClientLoginController {
 	public int login(String username, String password) {	
 		Client C = em.find(Client.class, username);
 		if(C.getPassword().equals(password)) {
+			em.close();
+			emf.close();
 			return 1;
 		}
+		em.close();
+		emf.close();
 		return 0;
 	}
 }

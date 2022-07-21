@@ -22,8 +22,17 @@ public class CrmAdminController {
 		entityManager.getTransaction().begin();
 		CrmAdmin f = entityManager.find(CrmAdmin.class, username);
 		if(f.getPassword().equals(password))
-			return 1;  
+		{
+			entityManager.close();
+			emf.close();
+			return 1; 
+		}
+			
+		
+		entityManager.close();
+		emf.close();
 		return 0;
+		
 	}
 
 }
