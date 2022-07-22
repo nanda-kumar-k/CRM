@@ -40,8 +40,7 @@ public class HomeCompanyBean {
 		}
 		return L;
 	}
-	
-	
+
 	
 	
 	public String getLocation() {

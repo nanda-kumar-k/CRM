@@ -14,66 +14,74 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
 </head>
 <body>
 	<div class="crm-navbar-container">
-            <div class="crm-navbar-inner">
-                <img src="static/images/logo.png" />
-                <div class="home-btn" style="width: 70px;" onclick="clientloginfun('open')">Login</div>
-                <div class="home-btn" style="width: 100px;" onclick="jobregisterfun('open')">Register</div>
-                <div class="home-btn" onclick="companyloginfun('open')">Company Login</div>
-                <div class="home-btn" onclick="companyregisterfun('open')">Comapny Register</div>
-            </div>
-            <div class="crm-navbar-options">
-              <div class="home-login" id="homelogin">
-                <div class="login">
-                    <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
-                        &#10060;
-                    </div>
-                    <h1>Find Job</h1>
-                    <p>Number One online job listing</p>
-                    <br/>
-                    <br/>
-                    <h2 style="margin-bottom: 30px;">Client Login</h2>
-                    <br/>
-                    <form  id="form">
-                        <p>Username</p>
-                        <input type="text" name="username" id="in"/>
-                        <br/>
-                        <br/>
-                        <p>Password</p>
-                        <input type="password" name="password" id="in"/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                    </form>
-                </div>
-            </div>
-            <div class="home-login" id="companylogin">
-                <div class="login">
-                    <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
-                        &#10060;
-                    </div>
-                    <h1>Find Job</h1>
-                    <p>Number One online job listing</p>
-                    <br/>
-                    <br/>
-                    <h2 style="margin-bottom: 30px;">Company Login</h2>
-                    <br/>
-                    <form  id="form">
-                        <p>Username</p>
-                        <input type="text" name="username" id="in"/>
-                        <br/>
-                        <br/>
-                        <p>Password</p>
-                        <input type="password" name="password" id="in"/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <div class="home-btn" style="width: 300px;margin-left: 0px;">Submit</div>
-                    </form>
-                </div>
-            </div>
-            </div>
+    <div class="crm-navbar-inner">
+        <img src="static/images/logo.png" />
+        <div class="home-btn" style="width: 70px;" onclick="clientloginfun('open')">Login</div>
+        <div class="home-btn" style="width: 100px;">
+          <h:form>
+            <h:link value = "Register" outcome = "clientsignup" style="text-decoration: none;color: white;"/>
+          </h:form>
         </div>
+        <div class="home-btn" onclick="companyloginfun('open')">Company Login</div>
+        <div class="home-btn" >
+          <h:form>
+            <h:link value = "Comapny Register" outcome = "companysignup" style="text-decoration: none;color: white;"/>
+          </h:form>
+        </div>
+    </div>
+    <div class="crm-navbar-options">
+      <div class="home-login" id="homelogin">
+        <div class="login">
+            <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
+                &#10060;
+            </div>
+            <h1>Find Job</h1>
+            <p>Number One online job listing</p>
+            <br/>
+            <br/>
+            <h2 style="margin-bottom: 30px;">Client Login</h2>
+            <br/>
+            <h:form class="form">
+                <p>Username</p>
+                <h:inputText value="#{ClLogin.username}"  name="username" class="inp" ></h:inputText>
+                <br/>
+                <br/>
+                <p>Password</p>
+                <h:inputText value="#{ClLogin.password}"  name="password" class="inp" ></h:inputText>
+                <br />
+                <br />
+                <br />
+                <h:commandButton action="#{ClLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+            </h:form>
+        </div>
+    </div>
+    <div class="home-login" id="companylogin">
+      <div class="login">
+          <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
+              &#10060;
+          </div>
+          <h1>Find Job</h1>
+          <p>Number One online job listing</p>
+          <br/>
+          <br/>
+          <h2 style="margin-bottom: 30px;">Company Login</h2>
+          <br/>
+          <h:form class="form">
+              <p>Username</p>
+              <h:inputText value="#{CoLogin.username}"  name="username" class="inp" ></h:inputText>
+              <br/>
+              <br/>
+              <p>Password</p>
+              <h:inputText value="#{CoLogin.password}"  name="password" class="inp" ></h:inputText>
+              <br />
+              <br />
+              <br />
+              <h:commandButton action="#{CoLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+          </h:form>
+      </div>
+  </div>
+  </div>
+</div>
         
         <div class="crm-profile-container">
             <div class="crm-profile-top-img">

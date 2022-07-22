@@ -65,16 +65,17 @@
   top: 10px;
   right: 10px;
 }
-.login #in {
+.login .inp {
   width: 300px;
   height: 30px;
   border-radius: 50px;
 }
-.login #form p {
+.login .form p {
   margin-bottom: 10px;
   font-size: 18px;
   border-radius: 50px;
 }
+
 
 .crm-navbar-inner img{
     width: 120px;
@@ -106,7 +107,7 @@
 
 .crm-profile-container {
     width: 100vw;
-    height: 100%;
+    height: 150vh;
     /* background: #5f2020; */
 }
 .crm-profile-container .crm-profile-top-img{
@@ -120,14 +121,14 @@
 }
 .crm-profile-container .crm-profile-img-container{
     width: 90vw;
-    height: 100%;
+    height: 100vh;
     padding: 0 5vw;
     display: flex;
     /* background: black; */
 }
 .crm-profile-container .crm-img-container-inner {
     width: 25vw;
-    height: 100%;
+    height: 30vh;
     /* background: yellow; */
     display: flex;
     flex-direction: column;
@@ -156,9 +157,9 @@
 }
 .crm-profile-info {
     width: 55vw;
-    height: 100%;
+    height: 100vh;
     padding: 0 5vw 0 0;
-    /* background: orange; */
+     /* background: orange; */
 }
 .crm-profile-info .crm-profile-links{
     margin-top: 3vh;
