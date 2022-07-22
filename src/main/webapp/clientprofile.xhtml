@@ -1,0 +1,272 @@
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" 
+xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+ xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+ xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+	<title>Example Web Page</title>
+    <link rel="stylesheet" type="text/css" href="static/ClientProfile.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+</head>
+<body>
+	<div class="crm-navbar-container">
+            <div class="crm-navbar-inner">
+                <img src="static/images/logo.png" />
+                <div class="home-btn" style="width: 70px;" onclick="clientloginfun('open')">Login</div>
+                <div class="home-btn" style="width: 100px;">
+                <h:form>
+         			<h:link value = "Register" outcome = "clientsignup" style="text-decoration: none;color: white;"/>
+      			</h:form>
+                </div>
+                <div class="home-btn" onclick="companyloginfun('open')">Company Login</div>
+                <div class="home-btn" >
+                <h:form>
+         			<h:link value = "Comapny Register" outcome = "companysignup" style="text-decoration: none;color: white;"/>
+      			</h:form>
+                </div>
+            </div>
+            <div class="crm-navbar-options">
+              <div class="home-login" id="homelogin">
+                <div class="login">
+                    <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
+                        &#10060;
+                    </div>
+                    <h1>Find Job</h1>
+                    <p>Number One online job listing</p>
+                    <br/>
+                    <br/>
+                    <h2 style="margin-bottom: 30px;">Client Login</h2>
+                    <br/>
+                    <h:form class="form">
+                        <p>Username</p>
+                        <h:inputText value="#{ClLogin.username}"  name="username" class="inp" ></h:inputText>
+                        <br/>
+                        <br/>
+                        <p>Password</p>
+                        <h:inputText value="#{ClLogin.password}"  name="password" class="inp" ></h:inputText>
+                        <br />
+                        <br />
+                        <br />
+                        <h:commandButton action="#{ClLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+            <div class="home-login" id="companylogin">
+                <div class="login">
+                    <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
+                        &#10060;
+                    </div>
+                    <h1>Find Job</h1>
+                    <p>Number One online job listing</p>
+                    <br/>
+                    <br/>
+                    <h2 style="margin-bottom: 30px;">Company Login</h2>
+                    <br/>
+                    <h:form class="form">
+                        <p>Username</p>
+                        <h:inputText value="#{CoLogin.username}"  name="username" class="inp" ></h:inputText>
+                        <br/>
+                        <br/>
+                        <p>Password</p>
+                        <h:inputText value="#{CoLogin.password}"  name="password" class="inp" ></h:inputText>
+                        <br />
+                        <br />
+                        <br />
+                        <h:commandButton action="#{CoLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+            </div>
+        </div>
+                
+                
+         <div class="crm-profile-container">
+            <div class="crm-profile-top-img">
+                <img src="static/images/profilebackground.jpg" />
+            </div>
+            <div class="crm-profile-img-container">
+            <c:forEach var="cap" items="#{ClLogin.ProfileClient()}">
+                <div class="crm-img-container-inner">
+                    <div class="crm-profile-img">
+                        <img src="static/images/profile.jpg" />
+                    </div>
+                    <br/>
+                    <div class="crm-contact-info">
+                        <h3>Contact:#{cap.phone_number}</h3>
+                        <h2 style="margin-top: 10px;">Email: #{cap.email_id}</h2>
+                    </div>
+                </div>
+                <div class="crm-profile-info">
+                    <h1 style="text-align: center;">#{cap.first_name} #{cap.last_name}</h1>
+                    <h2 style="text-align: center;">#{cap.preferred_role} </h2>
+                    <div class="crm-profile-links">
+                        <a href="#{cap.linkedin_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">Linkedin</p>
+                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="#{cap.github_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">GitHub</p>
+                                <i class="fa fa-github-square" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="#{cap.stop_stack_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">StopStack</p>
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="#{cap.cv_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">CV</p>
+                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <h3>Education Information:</h3>
+                    <p>#{cap.education_information}</p>
+                    <br/>
+                    <h3>Skills:</h3>
+                    <p>#{cap.skills}</p>
+                    <br/>
+                    <h3>Projects:</h3>
+                    <p>#{cap.projects}</p>
+                    <br/>
+                    <h3>Experience:</h3>
+                    <p>#{cap.experience}</p>
+                    <br/>
+                    <span style="display: flex; align-items: center;"><h3>Preferred Company:</h3><p style="margin-left: 20px;">#{cap.preferred_company}</p>
+                    </span>
+                    <br/>
+                    <span style="display: flex; align-items: center;">
+                    <h3>Preferred Location:</h3>
+                    <p style="margin-left: 20px;">#{cap.preferred_location}</p>
+                    </span>
+                    <br/>
+                    <span style="display: flex; align-items: center;">
+                    <h3>preferred Job Role:</h3>
+                    <P style="margin-left: 20px;">#{cap.preferred_role}</P>
+                    </span>
+                    <br/>
+                    <span style="display: flex; align-items: center;">
+                    <h3>Salary Expecting:</h3>
+                    <p style="margin-left: 20px;">#{cap.salary_expecting}</p>
+                    </span>
+                    <br/>
+
+                </div>
+                </c:forEach>
+            </div>
+        </div>
+        
+
+
+        <footer class="footer-distributed">
+
+          <div class="footer-left">
+    
+            <h3>Find<span>Job</span></h3>
+    
+            <p class="footer-links">
+               <a href="#">Client</a>
+              <br/>
+              <a href="#">Company</a>
+              <br/>
+              
+              <a href="#">About</a>
+              <br/>
+              
+              <a href="#">Contact</a>
+            </p>
+    
+            <p class="footer-company-name">FindJob Number One online job listing </p>
+          </div>
+    
+          <div class="footer-center">
+    
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>21 Revolution Street</span> vijayawada, India</p>
+            </div>
+    
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+91 6302551161</p>
+            </div>
+    
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="#">findjob@gmail.com</a></p>
+            </div>
+    
+          </div>
+    
+          <div class="footer-right">
+    
+            <p class="footer-company-about">
+              <span>About the company</span>
+              FindJob is a job portal website that allows job seekers to create an account and search for jobs.
+            </p>
+    
+            <div class="footer-icons">
+    
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>    
+            </div>
+    
+          </div>
+          <hr/>
+          <p style="font-size: 16px; color: white; align-items: center; text-align: center">@copyright FindJob</p>
+    
+        </footer>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+      <script>
+        function clientloginfun(attr){
+            if(attr=="open"){
+                document.getElementById("homelogin").style.display = "block";
+            }
+            else{
+                document.getElementById("homelogin").style.display = "none";
+            }
+        }
+        function companyloginfun(attr){
+            if(attr=="open"){
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("companylogin").style.display = "block";
+            }
+            else{
+                document.getElementById("homelogin").style.display = "none";
+                document.getElementById("companylogin").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

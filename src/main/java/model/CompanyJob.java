@@ -1,9 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -11,9 +16,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "company_job")
-public class CompanyJob {
+public class CompanyJob implements Serializable{
+	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int id;
 	String username;
 	String job_role;
 	String description;
@@ -21,8 +29,8 @@ public class CompanyJob {
 	int number_of_vacancy;
 	
 
-    @OneToMany(targetEntity = Company.class)
-    private Set<Company> students = new HashSet<>();
+//    @OneToMany(targetEntity = Company.class)
+//    private Set<Company> students = new HashSet<>();
 
 
 	public String getUsername() {
@@ -75,14 +83,27 @@ public class CompanyJob {
 	}
 
 
-	public Set<Company> getStudents() {
-		return students;
-	}
-
-
-	public void setStudents(Set<Company> students) {
-		this.students = students;
-	}
+//	public Set<Company> getStudents() {
+//		return students;
+//	}
+//
+//
+//	public void setStudents(Set<Company> students) {
+//		this.students = students;
+//	}
 	
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }
