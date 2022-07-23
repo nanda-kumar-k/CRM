@@ -62,7 +62,7 @@ public class CompanyLoginBean {
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
-		        System.out.println(data);
+//		        System.out.println(data);
 		        username = data;
 		        break;
 		      }
@@ -86,16 +86,25 @@ public class CompanyLoginBean {
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
-		        System.out.println(data);
+//		        System.out.println(data);
 		        cj.setUsername(data);
 		        break;
 		      }
+		  System.out.println("tttttttttttttttttttttttttttttttttttttttttttttt");
+		  System.out.println(description);
+		  System.out.println(job_role);
+		  System.out.println(description);
+		  System.out.println(cj.getUsername());
 	      myReader.close();
-	      cj.setDescription(description);
+	      cj.setId(103);
 	      cj.setJob_role(job_role);
-	      cj.setNumber_of_vacancy(number_of_vacancy);
+	      cj.setDescription(description);
 	      cj.setSalary(salary);
-	      cs.jobadd(cj);
+	      cj.setNumber_of_vacancy(number_of_vacancy);
+	      
+	      l = cs.jobadd(cj);
+	      if(l==1)
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
 		}
 		catch (Exception e) {
             System.out.println(e.getMessage());

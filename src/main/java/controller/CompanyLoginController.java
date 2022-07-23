@@ -75,7 +75,7 @@ public class CompanyLoginController {
 			}
 		}
 		
-		System.out.println(L);
+//		System.out.println(L);
 		
 		em.close();
 		emf.close();
@@ -85,9 +85,13 @@ public class CompanyLoginController {
 	}
 	
 	public int jobadd(CompanyJob companyjob) {
+		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
 		em.getTransaction().begin();
+		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
 		em.persist(companyjob);
+		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
 		em.getTransaction().commit();
+		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
 		em.close();
 		emf.close();
 		

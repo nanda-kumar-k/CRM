@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ClientFile {
 	public static void main(String[] args) {
 		try {
-		      File myObj = new File("client.txt");
+		      File myObj = new File("count.txt");
 		      if (myObj.createNewFile()) {
 		        System.out.println("File created: " + myObj.getAbsolutePath());
 		      } else {

@@ -15,12 +15,12 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "company_job")
+@Table(name = "new_table")
 public class CompanyJob implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+//	@GeneratedValue(strategy=GenerationType.AUTO)
 	int id;
 	String username;
 	String job_role;

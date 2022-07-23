@@ -55,7 +55,7 @@ public class HomeCompanyController {
 			}
 		}
 		
-		System.out.println(L);
+//		System.out.println(L);
 		
 		em.close();
 		emf.close();
@@ -88,8 +88,8 @@ public class HomeCompanyController {
 				}
 			}
 		}
-		
-		System.out.println(L);
+//		
+//		System.out.println(L);
 		
 		em.close();
 		emf.close();
