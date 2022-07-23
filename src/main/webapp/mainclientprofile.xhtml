@@ -5,7 +5,7 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
  xmlns:c="http://java.sun.com/jsp/jstl/core">
 <head>
 	<title>Example Web Page</title>
-    <link rel="stylesheet" type="text/css" href="static/home.css" />
+    <link rel="stylesheet" type="text/css" href="static/ClientProfile.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -82,77 +82,94 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
             </div>
             </div>
         </div>
-        <div class="slideshow">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="static/images/img6.jpg"/>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="static/images/img8.png"/>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="static/images/img7.jpg"/>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="static/images/img5.jpg"/>
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="static/images/img4.jpg"/>
-                  </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-              </div>
-        </div>
-        <div class="home-info">
-            <h1>Find your dream job now</h1>
-            <p>5 lakh+ jobs for you to explore</p>
-        </div>
-        <h:form>
-            <div class="home-search-option">
-            
-            	<h:selectOneMenu value="#{Homeitems.job_role}" class="role" >
-                   	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
-                   	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
-                   	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
-                   	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
-                   	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
-                   	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
-                   	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
-                   	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
-                   	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
-                   	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
-                   	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
-                   	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
-                   	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
-                   	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
-                   	<f:selectItem itemValue = "web development" itemLabel = "web development" />
-            </h:selectOneMenu>
-                <h:selectOneMenu value="#{Homeitems.location}" class="location" >
-                 	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
-                 	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
-                 	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
-                 	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
-                 	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
-                 	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
-                 	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
-                 	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
-                 	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
-                 	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
-                 	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
-                 	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
-                 	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
-                 	<f:selectItem itemValue = "hyb" itemLabel = "hyb" />
-             </h:selectOneMenu>
-                <h:commandButton action="#{Homeitems.findHome()}" value="Search" class="home-btn"  style="width: 100px;background-color: rgb(34, 152, 248)"></h:commandButton>
+                
+                
+         <div class="crm-profile-container">
+            <div class="crm-profile-top-img">
+                <img src="static/images/profilebackground.jpg" />
             </div>
-        </h:form>
-		<br/>
-		
-      <div class="jobs-container">
-      <c:forEach var="cap" items="#{Homeitems.findHome()}">
+            <div class="crm-profile-img-container">
+            <c:forEach var="cap" items="#{ClLogin.ProfileClient()}">
+                <div class="crm-img-container-inner">
+                    <div class="crm-profile-img">
+                        <img src="static/images/profile.jpg" />
+                    </div>
+                    <br/>
+                    <div class="crm-contact-info">
+                        <h3>Contact:#{cap.phone_number}</h3>
+                        <h2 style="margin-top: 10px;">Email: #{cap.email_id}</h2>
+                    </div>
+                </div>
+                <div class="crm-profile-info">
+                    <h1 style="text-align: center;">#{cap.first_name} #{cap.last_name}</h1>
+                    <h2 style="text-align: center;">#{cap.preferred_role} </h2>
+                    <div class="crm-profile-links">
+                        <a href="#{cap.linkedin_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">Linkedin</p>
+                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="#{cap.github_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">GitHub</p>
+                                <i class="fa fa-github-square" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="#{cap.stop_stack_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">StopStack</p>
+                                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <a href="#{cap.cv_link}">
+                            <div class="crm-profile-link-info">
+                                <p style="margin-right: 2px;">CV</p>
+                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <h3>Education Information:</h3>
+                    <p>#{cap.education_information}</p>
+                    <br/>
+                    <h3>Skills:</h3>
+                    <p>#{cap.skills}</p>
+                    <br/>
+                    <h3>Projects:</h3>
+                    <p>#{cap.projects}</p>
+                    <br/>
+                    <h3>Experience:</h3>
+                    <p>#{cap.experience}</p>
+                    <br/>
+                    <span style="display: flex; align-items: center;"><h3>Preferred Company:</h3><p style="margin-left: 20px;">#{cap.preferred_company}</p>
+                    </span>
+                    <br/>
+                    <span style="display: flex; align-items: center;">
+                    <h3>Preferred Location:</h3>
+                    <p style="margin-left: 20px;">#{cap.preferred_location}</p>
+                    </span>
+                    <br/>
+                    <span style="display: flex; align-items: center;">
+                    <h3>preferred Job Role:</h3>
+                    <P style="margin-left: 20px;">#{cap.preferred_role}</P>
+                    </span>
+                    <br/>
+                    <span style="display: flex; align-items: center;">
+                    <h3>Salary Expecting:</h3>
+                    <p style="margin-left: 20px;">#{cap.salary_expecting}</p>
+                    </span>
+                    <br/>
+
+                </div>
+                </c:forEach>
+            </div>
+        </div>
+        
+		<div class="jobs-container">
+      <c:forEach var="cap" items="#{ClLogin.mainClientProfile()}">
           <div class="jobs-inner">
               <h2>#{cap.job_role}</h2>
               <h4 style="margin-bottom: 20px;">#{cap.name}</h4>
@@ -173,17 +190,16 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                   <td>#{cap.email}</td>
                 </tr>
               </table>
-               <!--<div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Apply Now</div> -->
+              <h:form>
+		            <h:commandButton 
+		            value = "Directions" action = "#{ClLogin.direction()}" class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">
+		            <f:param name = "username" value = "#{cap.username}" />
+		         </h:commandButton>
+             </h:form>
           </div>
 		</c:forEach>
           
       </div>
-
-
-
-
-
-
 
         <footer class="footer-distributed">
 

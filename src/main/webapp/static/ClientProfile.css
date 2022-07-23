@@ -188,6 +188,49 @@
     /*background: white;*/
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
+.jobs-container {
+  width: 80vw;
+  height: 90%;
+  padding: 5vh 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: scroll;
+}
+.jobs-container .jobs-inner {
+  margin-bottom: 30px;
+  width: 16vw;
+  height: 40vh;
+  padding: 2vh 1vw;
+  /* border-style: solid; */
+  border-radius: 20px;
+  /* border-width: 1px; */
+  overflow-x: scroll;
+  position: relative;
+  /* background: linear-gradient(rgb(168, 247, 247),white); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+.jobs-container .jobs-inner:hover{
+  background: linear-gradient(rgb(168, 247, 247),white);
+
+}
+
+.jobs-inner td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px 20px 2px 0px;
+}
+
+.jobs-inner #apply-btn{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+
 footer{
 
 	bottom: 0;
