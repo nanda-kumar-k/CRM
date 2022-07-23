@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
@@ -28,6 +31,16 @@ public class ClientSignupController {
 		
 		em.close();
 		emf.close();
+		
+		try {
+		      FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\client.txt");
+		      myWriter.write(client.getUsername());
+		      myWriter.close();
+		      return 1;
+		      
+		    } catch (IOException e) {
+		      e.printStackTrace();
+		    }
 		return 1;
 	}
 

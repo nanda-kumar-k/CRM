@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +30,15 @@ public class CompanyLoginController {
 		if(C.getPassword().equals(password)) {
 			em.close();
 			emf.close();
-			return 1;
+			try {
+			      FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\company.txt");
+			      myWriter.write(username);
+			      myWriter.close();
+			      return 1;
+			      
+			    } catch (IOException e) {
+			      e.printStackTrace();
+			    }
 		}
 		em.close();
 		emf.close();

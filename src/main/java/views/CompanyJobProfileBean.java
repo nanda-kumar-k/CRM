@@ -1,6 +1,7 @@
 package views;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -40,7 +41,7 @@ public class CompanyJobProfileBean {
 		}
 		return L;
 	}
-	
+	int cou;
 	public void addnewjobrole() {
 		try {
 			CompanyJob cj = new CompanyJob();
@@ -52,7 +53,16 @@ public class CompanyJobProfileBean {
 		        break;
 		      }
 		      myReader.close();
-		 
+		      
+		      File myO = new File("C:\\Users\\mvr_n\\workspace\\CRM\\count.txt");
+		      Scanner myR = new Scanner(myO);
+		      while (myR.hasNextLine()) {
+		        String data = myR.nextLine();
+		        cou = Integer.parseInt(data);
+		        break;
+		      }
+		      myR.close();
+		      cj.setId(cou);
 		      cj.setDescription(description);
 		      cj.setUsername(username);
 		      cj.setJob_role(job_role);
@@ -60,7 +70,10 @@ public class CompanyJobProfileBean {
 		      cj.setSalary(salary);
 		      CompanyJobProfileController cpc = new CompanyJobProfileController();
 		      cpc.addcompanyjob(cj);
-		      
+		      FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\count.txt");
+		      myWriter.write(cou+1);
+		      myWriter.close();
+		    
 			
 		}
 			catch (Exception e) {

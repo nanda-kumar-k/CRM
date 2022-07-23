@@ -1,6 +1,7 @@
 package views;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,7 +27,7 @@ public class CompanyLoginBean {
 			CompanyLoginController cs = new CompanyLoginController();
 			l = cs.login(username, password);
 			if(l==1)
-				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "companyjobprofile.xhtml");
 		}
 			catch (Exception e) {
              System.out.println(e.getMessage());
@@ -77,7 +78,7 @@ public class CompanyLoginBean {
 		
 		return s;
 	}
-	
+	int cou;
 	public void addjob() {
 		try {
 			CompanyJob cj = new CompanyJob();
@@ -90,22 +91,34 @@ public class CompanyLoginBean {
 		        cj.setUsername(data);
 		        break;
 		      }
+		      File myO = new File("C:\\Users\\mvr_n\\workspace\\CRM\\count.txt");
+		      Scanner myR = new Scanner(myO);
+		      while (myR.hasNextLine()) {
+		        String data = myR.nextLine();
+		        cou = Integer.parseInt(data);
+		        break;
+		      }
+		      myR.close();
+		      cj.setId(cou);
 		  System.out.println("tttttttttttttttttttttttttttttttttttttttttttttt");
 		  System.out.println(description);
 		  System.out.println(job_role);
 		  System.out.println(description);
 		  System.out.println(cj.getUsername());
 	      myReader.close();
-	      cj.setId(103);
 	      cj.setJob_role(job_role);
 	      cj.setDescription(description);
 	      cj.setSalary(salary);
 	      cj.setNumber_of_vacancy(number_of_vacancy);
 	      
 	      l = cs.jobadd(cj);
-	      if(l==1)
-				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
-		}
+	      if(l==1) {
+	    	  FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\count.txt");
+		      myWriter.write(cou+1);
+		      myWriter.close();
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "companyjobprofile.xhtml");
+	      }
+	      }
 		catch (Exception e) {
             System.out.println(e.getMessage());
 		}

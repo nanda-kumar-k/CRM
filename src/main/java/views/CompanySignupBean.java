@@ -55,7 +55,7 @@ public class CompanySignupBean {
 		try {
 			Company cs = new Company();
 			CompanySigupController csc = new CompanySigupController();
-			File myObj = new File("C:\\Users\\mvr_n\\workspace\\CRM\\client.txt");
+			File myObj = new File("C:\\Users\\mvr_n\\workspace\\CRM\\company.txt");
 		      Scanner myReader = new Scanner(myObj);
 		      while (myReader.hasNextLine()) {
 		        String data = myReader.nextLine();
@@ -69,7 +69,7 @@ public class CompanySignupBean {
 			cs.setLatitude(latitude);
 			l = csc.updatelonglat(cs);
 			if(l==1)
-				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "companyjobprofile.xhtml");
 		}
 			catch (Exception e) {
              System.out.println(e.getMessage());
