@@ -30,7 +30,7 @@ public class ClientLoginBean {
 			ClientLoginController cs = new ClientLoginController();
 			l = cs.login(username, password);
 			if(l==1)
-				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
+				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "mainclientprofile.xhtml");
 		}
 			catch (Exception e) {
              System.out.println(e.getMessage());

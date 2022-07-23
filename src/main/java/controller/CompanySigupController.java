@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -21,6 +24,15 @@ public class CompanySigupController {
 		em.getTransaction().commit();
 		em.close();
 		emf.close();
+		try {
+		      FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\company.txt");
+		      myWriter.write(company.getUsername());
+		      myWriter.close();
+		      return 1;
+		      
+		    } catch (IOException e) {
+		      e.printStackTrace();
+		    }
 		return 1;
 	}
 	
