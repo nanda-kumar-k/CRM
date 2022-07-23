@@ -13,6 +13,7 @@ import javax.faces.context.FacesContext;
 
 import controller.ClientLoginController;
 import model.Client;
+import model.Company;
 import model.HomeCompany;
 
 
@@ -83,15 +84,18 @@ public class ClientLoginBean {
 		return cip;
 	}
 	
-	
-	public void direction() {
+	List<Company> di;
+	public List<Company> direction() {
 		FacesContext fc = FacesContext.getCurrentInstance();
 	      Map<String,String> params = 
 	         fc.getExternalContext().getRequestParameterMap();
 	      String user =  params.get("username"); 
 	      System.out.println("ssssssssssssssssssssssssssssssssssssssssss");
 	      System.out.println(user);
-	     
+	      ClientLoginController cs = new ClientLoginController();
+	      di = cs.getDirections(user);
+	      FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "directions.xhtml");
+	     return di;
 	}
 	
 	
