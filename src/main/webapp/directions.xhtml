@@ -43,7 +43,10 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
 <div class="long-lat-info">
     <h3 style="margin-bottom: 10px;">Enter below value in  beside box </h3>
     <h3 id="source"></h3>
-    <h3>B: {{ data }}</h3>
+    <h3>B: <c:forEach var="cap" items="#{ClLogin.direction()}">
+    #{cap.longitude}, #{cap.latitude}
+    	</c:forEach>
+    </h3>
 </div>
 <script>
     if (!navigator.geolocation)

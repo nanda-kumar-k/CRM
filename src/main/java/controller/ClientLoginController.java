@@ -98,4 +98,12 @@ public class ClientLoginController {
 		
 		return L;
 	}
+	
+	public List<Company> getDirections(String username){
+		em.getTransaction().begin();
+		Query q1 = em.createQuery("SELECT c FROM Company c WHERE c.username=?1");
+		q1.setParameter(1, username);
+		List<Company> d1 = q1.getResultList();
+		return d1;
+	}
 }

@@ -107,4 +107,6 @@ public class CompanyLoginController {
 		
 		return 1;
 	}
+	
+	
 }
