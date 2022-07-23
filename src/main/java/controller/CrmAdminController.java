@@ -1,9 +1,13 @@
 package controller;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
+import javax.persistence.Query;
+import model.Client;
+import model.Company;
 import model.CrmAdmin;
 
 public class CrmAdminController {
@@ -17,22 +21,37 @@ public class CrmAdminController {
 	}
 	
 	public int logins(String username, String password) {
-		System.out.println("ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-		System.out.println(password);
-		entityManager.getTransaction().begin();
 		CrmAdmin f = entityManager.find(CrmAdmin.class, username);
-		if(f.getPassword().equals(password))
-		{
+		if(f!=null) {
+			if(f.getPassword().equals(password))
+			{
+				entityManager.close();
+				emf.close();
+				return 1; 
+			}
 			entityManager.close();
 			emf.close();
-			return 1; 
+			return 0;
 		}
-			
 		
 		entityManager.close();
 		emf.close();
 		return 0;
 		
+	}
+	
+	public List<Client> allclient(){
+		entityManager.getTransaction().begin();
+		Query q1 = entityManager.createQuery("SELECT c FROM Client c");
+		List<Client> L = q1.getResultList();
+		return L;
+	}
+	
+	public List<Company> allcompany(){
+		entityManager.getTransaction().begin();
+		Query q1 = entityManager.createQuery("SELECT c FROM Company c");
+		List<Company> L = q1.getResultList();
+		return L;
 	}
 
 }
