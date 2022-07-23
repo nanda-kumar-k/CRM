@@ -104,10 +104,61 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+.home-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10vh;
+    margin-top: 8vh;
+}
+.home-info h1{
+    font-size: 40px;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+
+.home-info p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: rgb(53, 59, 57);
+}
+.home-search-option {
+    margin-top: 25px;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-search-option .role{
+    width: 30vw;
+    height: 5vh;
+    font-size: 20px;
+    margin-right: 50px;
+    padding-left: 20px;
+    border-radius: 50px;
+    color: black;
+}
+.home-search-option .location{
+    width: 15vw;
+    height: 5vh;
+    font-size: 20px;
+    margin-right: 50px;
+    padding-left: 20px;
+    border-radius: 50px;
+    color: black;
+}
+
+
+
 .crm-profile-container {
     width: 100vw;
-    height: 100%;
-    /* background: #5f2020; */
+    height: 53vh;
+    /* background: #5f2020;*/
 }
 .crm-profile-container .crm-profile-top-img{
     width: 100vw;
@@ -145,7 +196,7 @@
     border-color: #75bcec;
     /* background: orange; */
     background: white;
-    margin-top: -15vh;
+    margin-top: -18vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,16 +222,19 @@
 
 .crm-job-offer-container{
     width: 80vw;
-    height: 100%;
+    min-height: 50vh;
+    max-height: 90vh;
     padding: 0 10vw;
     /* background: #5f2020; */
 }
 .jobs-container {
     width: 80vw;
-    height: 100%;
+    min-height: 50vh;
+    max-height: 90vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow-y: scroll;
   }
   .jobs-container .jobs-inner {
     margin-bottom: 30px;
@@ -218,7 +272,7 @@
     padding: 0 15vw;
     /* background: #5f2020; */
     display: flex;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 50px;
 }
 .crm-add-offer-container .crm-slideshow {
@@ -273,7 +327,7 @@
     margin-bottom: 5px;
     font-size: 20px;
 }
-.crm-newrole-conatainer .forms #crm-add{
+.crm-newrole-conatainer .forms .crm-add{
     width: 25vw;
     height: 5vh;
     border-radius: 5px;

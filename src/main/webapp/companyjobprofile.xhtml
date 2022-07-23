@@ -14,74 +14,76 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
 </head>
 <body>
 	<div class="crm-navbar-container">
-    <div class="crm-navbar-inner">
-        <img src="static/images/logo.png" />
-        <div class="home-btn" style="width: 70px;" onclick="clientloginfun('open')">Login</div>
-        <div class="home-btn" style="width: 100px;">
-          <h:form>
-            <h:link value = "Register" outcome = "clientsignup" style="text-decoration: none;color: white;"/>
-          </h:form>
-        </div>
-        <div class="home-btn" onclick="companyloginfun('open')">Company Login</div>
-        <div class="home-btn" >
-          <h:form>
-            <h:link value = "Comapny Register" outcome = "companysignup" style="text-decoration: none;color: white;"/>
-          </h:form>
-        </div>
-    </div>
-    <div class="crm-navbar-options">
-      <div class="home-login" id="homelogin">
-        <div class="login">
-            <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
-                &#10060;
+            <div class="crm-navbar-inner">
+                <img src="static/images/logo.png" />
+                <div class="home-btn" style="width: 70px;" onclick="clientloginfun('open')">Login</div>
+                <div class="home-btn" style="width: 100px;">
+                <h:form>
+         			<h:link value = "Register" outcome = "clientsignup" style="text-decoration: none;color: white;"/>
+      			</h:form>
+                </div>
+                <div class="home-btn" onclick="companyloginfun('open')">Company Login</div>
+                <div class="home-btn" >
+                <h:form>
+         			<h:link value = "Comapny Register" outcome = "companysignup" style="text-decoration: none;color: white;"/>
+      			</h:form>
+                </div>
             </div>
-            <h1>Find Job</h1>
-            <p>Number One online job listing</p>
-            <br/>
-            <br/>
-            <h2 style="margin-bottom: 30px;">Client Login</h2>
-            <br/>
-            <h:form class="form">
-                <p>Username</p>
-                <h:inputText value="#{ClLogin.username}"  name="username" class="inp" ></h:inputText>
-                <br/>
-                <br/>
-                <p>Password</p>
-                <h:inputText value="#{ClLogin.password}"  name="password" class="inp" ></h:inputText>
-                <br />
-                <br />
-                <br />
-                <h:commandButton action="#{ClLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
-            </h:form>
+            <div class="crm-navbar-options">
+              <div class="home-login" id="homelogin">
+                <div class="login">
+                    <div class="login-close" onclick="clientloginfun('close')" style="cursor: pointer;">
+                        &#10060;
+                    </div>
+                    <h1>Find Job</h1>
+                    <p>Number One online job listing</p>
+                    <br/>
+                    <br/>
+                    <h2 style="margin-bottom: 30px;">Client Login</h2>
+                    <br/>
+                    <h:form class="form">
+                        <p>Username</p>
+                        <h:inputText value="#{ClLogin.username}"  name="username" class="inp" ></h:inputText>
+                        <br/>
+                        <br/>
+                        <p>Password</p>
+                        <h:inputText value="#{ClLogin.password}"  name="password" class="inp" ></h:inputText>
+                        <br />
+                        <br />
+                        <br />
+                        <h:commandButton action="#{ClLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+            <div class="home-login" id="companylogin">
+                <div class="login">
+                    <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
+                        &#10060;
+                    </div>
+                    <h1>Find Job</h1>
+                    <p>Number One online job listing</p>
+                    <br/>
+                    <br/>
+                    <h2 style="margin-bottom: 30px;">Company Login</h2>
+                    <br/>
+                    <h:form class="form">
+                        <p>Username</p>
+                        <h:inputText value="#{CoLogin.username}"  name="username" class="inp" ></h:inputText>
+                        <br/>
+                        <br/>
+                        <p>Password</p>
+                        <h:inputText value="#{CoLogin.password}"  name="password" class="inp" ></h:inputText>
+                        <br />
+                        <br />
+                        <br />
+                        <h:commandButton action="#{CoLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
-    <div class="home-login" id="companylogin">
-      <div class="login">
-          <div class="login-close" onclick="companyloginfun('close')" style="cursor: pointer;">
-              &#10060;
-          </div>
-          <h1>Find Job</h1>
-          <p>Number One online job listing</p>
-          <br/>
-          <br/>
-          <h2 style="margin-bottom: 30px;">Company Login</h2>
-          <br/>
-          <h:form class="form">
-              <p>Username</p>
-              <h:inputText value="#{CoLogin.username}"  name="username" class="inp" ></h:inputText>
-              <br/>
-              <br/>
-              <p>Password</p>
-              <h:inputText value="#{CoLogin.password}"  name="password" class="inp" ></h:inputText>
-              <br />
-              <br />
-              <br />
-              <h:commandButton action="#{CoLogin.loginClient()}"  value="Login" class="home-btn" style="width: 300px;margin-left: 0px;background-color: rgb(255, 135, 60);"></h:commandButton>
-          </h:form>
-      </div>
-  </div>
-  </div>
-</div>
+        
+        
         
         <div class="crm-profile-container">
             <div class="crm-profile-top-img">
@@ -97,7 +99,7 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                         <hr style="width: 25vw;"/>
                     </div>
                 </div>
-                <div class="crm-profile-info" style="margin-top: 53.5px;">
+                <div class="crm-profile-info" style="margin-top: 60px;">
                     <h1 style="text-align: left;">Company Name</h1>
                     <br/>
                     <hr style="width: 60vw;"/>
@@ -105,36 +107,117 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                 </div>
             </div>
         </div>
+        
+        
+        
+        
+        <div class="home-info">
+            <h1>Find your dream employee now</h1>
+            <p>5 lakh+ employee for you to explore</p>
+        </div>
+        <h:form>
+            <div class="home-search-option">
+            
+            	<h:selectOneMenu value="#{CoLogin.job_role}" class="role" >
+                   	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
+                   	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
+                   	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
+                   	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
+                   	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
+                   	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
+                   	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
+                   	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
+                   	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
+                   	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
+                   	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
+                   	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
+                   	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
+                   	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
+                   	<f:selectItem itemValue = "web development" itemLabel = "web development" />
+            </h:selectOneMenu>
+                <h:selectOneMenu value="#{CoLogin.location}" class="location" >
+                 	<f:selectItem itemValue = "SelectCompanyLocation" itemLabel = "Select Company Location" />
+                 	<f:selectItem itemValue = "Mumbai" itemLabel = "Mumbai" />
+                 	<f:selectItem itemValue = "Pune" itemLabel = "Pune" />
+                 	<f:selectItem itemValue = "Bangalore" itemLabel = "Bangalore" />
+                 	<f:selectItem itemValue = "Delhi" itemLabel = "Delhi" />
+                 	<f:selectItem itemValue = "Hyderabad" itemLabel = "Hyderabad" />
+                 	<f:selectItem itemValue = "Chennai" itemLabel = "Chennai" />
+                 	<f:selectItem itemValue = "Kolkata" itemLabel = "Kolkata" />
+                 	<f:selectItem itemValue = "Indore" itemLabel = "Indore" />
+                 	<f:selectItem itemValue = "Ahmedabad" itemLabel = "Ahmedabad" />
+                 	<f:selectItem itemValue = "Nagpur" itemLabel = "Nagpur" />
+                 	<f:selectItem itemValue = "Surat" itemLabel = "Surat" />
+                 	<f:selectItem itemValue = "Jaipur" itemLabel = "Jaipur" />
+                 	<f:selectItem itemValue = "hyb" itemLabel = "hyb" />
+             </h:selectOneMenu>
+                <h:commandButton action="#{CoLogin.findClient()}" value="Search" class="home-btn"  style="width: 100px;background-color: rgb(34, 152, 248)"></h:commandButton>
+            </div>
+        </h:form>
+		<br/>
+        
+        
         <div class="crm-job-offer-container" style="margin-top: 20px;">
+            <div class="jobs-container">
+             <c:forEach var="cap" items="#{CoLogin.findClient()}">
+                <div class="jobs-inner">
+                    <h2>#{cap.first_name} #{cap.last_name}</h2>
+                    <h4 style="margin-bottom: 20px;">#{cap.preferred_role}</h4>
+                    <p style="margin-bottom: 5px;">
+                      #{cap.education_information}
+                    </p>
+                    <table>
+                      <tr>
+                        <td><b>CV:</b></td>
+                        <td><a href="#{cap.cv_link}">Click here </a></td>
+                      </tr>
+                      <tr>
+                        <td><b>Salary Expecting:</b></td>
+                        <td>#{cap.salary_expecting}</td>
+                      </tr>
+                      <tr>
+                        <td><b>Contact:</b></td>
+                        <td>#{cap.email_id}</td>
+                      </tr>
+                    </table>
+                    <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Conform</div>
+                </div>
+                </c:forEach>
+            </div>
+        </div>
+        
+        
+        <div class="crm-job-offer-container" style="margin-top: 50px;">
             <h1 style="color: #3498db;">Current vacancy</h1>
             <hr style="width: 15vw;"/>
             <br/>
             <div class="jobs-container">
-             <c:forEach var="cap" items="#{Cojobprofile.companyjobs()}">
-                <div class="jobs-inner">
-                    <h2>#{cap.job_role}</h2>
-                    <h4 style="margin-bottom: 20px;">#{cap.name}</h4>
-                    <p style="margin-bottom: 5px;">
-                      #{cap.description}
-                    </p>
-                    <table>
-                      <tr>
-                        <td><b>Location:</b></td>
-                        <td>#{cap.location}</td>
-                      </tr>
-                      <tr>
-                        <td><b>vacancy:</b></td>
-                        <td>#{cap.number_of_vacancy}</td>
-                      </tr>
-                      <tr>
-                        <td><b>Contact:</b></td>
-                        <td>#{cap.email}</td>
-                      </tr>
-                    </table>
-                    <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Apply Now</div>
-                </div>
-                </c:forEach>
-            </div>
+      <c:forEach var="cap" items="#{CoLogin.companyAllJobs()}">
+          <div class="jobs-inner">
+              <h2>#{cap.job_role}</h2>
+              <h4 style="margin-bottom: 20px;">#{cap.name}</h4>
+              <p style="margin-bottom: 5px;">
+                #{cap.description}
+              </p>
+              <table>
+                <tr>
+                  <td><b>Location:</b></td>
+                  <td>#{cap.location}</td>
+                </tr>
+                <tr>
+                  <td><b>vacancy:</b></td>
+                  <td>#{cap.number_of_vacancy}</td>
+                </tr>
+                <tr>
+                  <td><b>Contact:</b></td>
+                  <td>#{cap.email}</td>
+                </tr>
+              </table>
+              <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Apply Now</div>
+          </div>
+		</c:forEach>
+          
+      </div>
         </div>
 
         <div class="crm-add-offer-container">
@@ -169,201 +252,102 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
                 <br/>
                 <h:form class="forms">
                     <p>Select New Job Role</p>
-                    <h:selectOneMenu value="#{Cojobprofile.job_role}" class="crm-add" >
-                    	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
-                    	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
-                    	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
-                    	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
-                    	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
-                    	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
-                    	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
-                    	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
-                    	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
-                    	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
-                    	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
-                    	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
-                    	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
-                    	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
-                    </h:selectOneMenu>
+                    <h:selectOneMenu value="#{CoLogin.job_role}" class="crm-add" >
+                   	<f:selectItem itemValue = "SelectJobRole" itemLabel = "Select Job Role" /> 
+                   	<f:selectItem itemValue = "ApplicationDeveloper" itemLabel = "Application Developer" /> 
+                   	<f:selectItem itemValue = "Front-endDeveloper" itemLabel = "Front-end Developer" />
+                   	<f:selectItem itemValue = "Back-endDeveloper" itemLabel = "Back-end Developer" />
+                   	<f:selectItem itemValue = "DataScientist" itemLabel = "Data Scientist" /> 
+                   	<f:selectItem itemValue = "GameDeveloper" itemLabel = "Game Developer" />
+                   	<f:selectItem itemValue = "QualityAnalyst" itemLabel = "Quality Analyst" />
+                   	<f:selectItem itemValue = "MobileTestEngineer" itemLabel = "Mobile Test Engineer" /> 
+                   	<f:selectItem itemValue = "Full-stackDeveloper" itemLabel = "Full-stack Developer" />
+                   	<f:selectItem itemValue = "DevOpsEngineer" itemLabel = "DevOps Engineer" />
+                   	<f:selectItem itemValue = "CloudEngineer" itemLabel = "Cloud Engineer" /> 
+                   	<f:selectItem itemValue = "CloudConsultant" itemLabel = "Cloud Consultant" />
+                   	<f:selectItem itemValue = "EmbeddedSystemEngineer" itemLabel = "Embedded System Engineer" />
+                   	<f:selectItem itemValue = "LanguageDeveloper" itemLabel = "Language Developer" />
+                   	<f:selectItem itemValue = "web development" itemLabel = "web development" />
+            </h:selectOneMenu>
                     <br/>
                     <p>Description</p>
-                    <h:inputText value="#{Cojobprofile.description}" class="crm-add" style="height: 15vh;" ></h:inputText>
+                    <h:inputText value="#{CoLogin.description}" class="crm-add" style="height: 15vh;"></h:inputText>
                     <br/>
                     <p>Salary Offering</p>
-                    <h:inputText value="#{Cojobprofile.salary}" class="crm-add" ></h:inputText>
+                     <h:inputText value="#{CoLogin.salary}" class="crm-add"></h:inputText>
                     <br/>
                     <p>number of vacancy</p>
-                    <h:inputText value="#{Cojobprofile.number_of_vacancy}" class="crm-add" ></h:inputText>
+                     <h:inputText value="#{CoLogin.number_of_vacancy}" class="crm-add"></h:inputText>
                     <br/>
-                    <h:commandButton action="#{Cojobprofile.addnewjobrole()}" value="Submit" class="home-btn"
-                     style="width: 24vw;margin-left: 0px; color: black; background-color: rgb(248, 162, 34);margin-top: 50px;margin-bottom: 50px;"></h:commandButton>
-                     
+                    <h:commandButton action="#{CoLogin.addjob()}"  value="Submit" class="home-btn"
+                     style="width: 24vw;margin-left: 0px; color: black; background-color: rgb(248, 162, 34);margin-top: 50px;margin-bottom: 50px;">
+                     </h:commandButton>
                 </h:form>
             </div>
         </div>
 
-        <div class="crm-job-offer-container" style="margin-top: 20px;">
-            <h1 style="color: #3498db;">Job Application</h1>
-            <hr style="width: 15vw;"/>
-            <br/>
-            <div class="jobs-container">
-                <div class="jobs-inner">
-                    <h2>Name</h2>
-                    <h4 style="margin-bottom: 20px;">Job Role</h4>
-                    <p style="margin-bottom: 5px;">
-                      the job involves heavy lifting or exposure to extreme temperatures. Extensive travel and prolonged standing, for example, are also special demands. Goals and objectives.
-                    </p>
-                    <table>
-                      <tr>
-                        <td><b>CV:</b></td>
-                        <td><a href="#">Click here </a></td>
-                      </tr>
-                      <tr>
-                        <td><b>Salary Expecting:</b></td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td><b>Contact:</b></td>
-                        <td>nandakumar.kddsfsdfdsfsdfdsff</td>
-                      </tr>
-                    </table>
-                    <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Conform</div>
-                </div>
+        
 
-                <div class="jobs-inner">
-                    <h2>Name</h2>
-                    <h4 style="margin-bottom: 20px;">Job Role</h4>
-                    <p style="margin-bottom: 5px;">
-                      the job involves heavy lifting or exposure to extreme temperatures. Extensive travel and prolonged standing, for example, are also special demands. Goals and objectives.
-                    </p>
-                    <table>
-                      <tr>
-                        <td><b>CV:</b></td>
-                        <td><a href="#">Click here </a></td>
-                      </tr>
-                      <tr>
-                        <td><b>Salary Expecting:</b></td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td><b>Contact:</b></td>
-                        <td>nandakumar.kddsfsdfdsfsdfdsff</td>
-                      </tr>
-                    </table>
-                    <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Conform</div>
-                </div>
-
-                <div class="jobs-inner">
-                    <h2>Name</h2>
-                    <h4 style="margin-bottom: 20px;">Job Role</h4>
-                    <p style="margin-bottom: 5px;">
-                      the job involves heavy lifting or exposure to extreme temperatures. Extensive travel and prolonged standing, for example, are also special demands. Goals and objectives.
-                    </p>
-                    <table>
-                      <tr>
-                        <td><b>CV:</b></td>
-                        <td><a href="#">Click here </a></td>
-                      </tr>
-                      <tr>
-                        <td><b>Salary Expecting:</b></td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td><b>Contact:</b></td>
-                        <td>nandakumar.kddsfsdfdsfsdfdsff</td>
-                      </tr>
-                    </table>
-                    <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Conform</div>
-                </div>
-
-                <div class="jobs-inner">
-                    <h2>Name</h2>
-                    <h4 style="margin-bottom: 20px;">Job Role</h4>
-                    <p style="margin-bottom: 5px;">
-                      the job involves heavy lifting or exposure to extreme temperatures. Extensive travel and prolonged standing, for example, are also special demands. Goals and objectives.
-                    </p>
-                    <table>
-                      <tr>
-                        <td><b>CV:</b></td>
-                        <td><a href="#">Click here </a></td>
-                      </tr>
-                      <tr>
-                        <td><b>Salary Expecting:</b></td>
-                        <td>10</td>
-                      </tr>
-                      <tr>
-                        <td><b>Contact:</b></td>
-                        <td>nandakumar.kddsfsdfdsfsdfdsff</td>
-                      </tr>
-                    </table>
-                    <div class="home-btn" id="apply-btn" style="width: 100px;background-color: rgb(248, 162, 34)">Conform</div>
-                </div>
-
-                
-                
-            </div>
-        </div>
 
         <footer class="footer-distributed">
 
-            <div class="footer-left">
-      
-              <h3>Find<span>Job</span></h3>
-      
-              <p class="footer-links">
-                 <a href="#">Client</a>
-                <br/>
-                
-                <a href="#">Company</a>
-                <br/>
-                
-                <a href="#">About</a>
-                <br/>
-                
-                <a href="#">Contact</a>
-              </p>
-      
-              <p class="footer-company-name">FindJob Number One online job listing </p>
+          <div class="footer-left">
+    
+            <h3>Find<span>Job</span></h3>
+    
+            <p class="footer-links">
+               <a href="#">Client</a>
+              <br/>
+              <a href="#">Company</a>
+              <br/>
+              
+              <a href="#">About</a>
+              <br/>
+              
+              <a href="#">Contact</a>
+            </p>
+    
+            <p class="footer-company-name">FindJob Number One online job listing </p>
+          </div>
+    
+          <div class="footer-center">
+    
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>21 Revolution Street</span> vijayawada, India</p>
             </div>
-      
-            <div class="footer-center">
-      
-              <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>21 Revolution Street</span> vijayawada, India</p>
-              </div>
-      
-              <div>
-                <i class="fa fa-phone"></i>
-                <p>+91 6302551161</p>
-              </div>
-      
-              <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="#">findjob@gmail.com</a></p>
-              </div>
-      
+    
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+91 6302551161</p>
             </div>
-      
-            <div class="footer-right">
-      
-              <p class="footer-company-about">
-                <span>About the company</span>
-                FindJob is a job portal website that allows job seekers to create an account and search for jobs.
-              </p>
-      
-              <div class="footer-icons">
-      
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>    
-              </div>
-      
+    
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="#">findjob@gmail.com</a></p>
             </div>
-            <hr/>
-            <p style="font-size: 16px; color: white; align-items: center; text-align: center">@copyright FindJob</p>
-      
-          </footer>
+    
+          </div>
+    
+          <div class="footer-right">
+    
+            <p class="footer-company-about">
+              <span>About the company</span>
+              FindJob is a job portal website that allows job seekers to create an account and search for jobs.
+            </p>
+    
+            <div class="footer-icons">
+    
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>    
+            </div>
+    
+          </div>
+          <hr/>
+          <p style="font-size: 16px; color: white; align-items: center; text-align: center">@copyright FindJob</p>
+    
+        </footer>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
         var swiper = new Swiper(".mySwiper", {
@@ -377,10 +361,10 @@ xmlns:ui="http://java.sun.com/jsf/facelets"
             el: ".swiper-pagination",
             clickable: true,
           },
-        //   navigation: {
-        //     nextEl: ".swiper-button-next",
-        //     prevEl: ".swiper-button-prev",
-        //   },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
         });
       </script>
       <script>

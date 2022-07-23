@@ -1,14 +1,24 @@
 package views;
 
+import java.io.File;
+import java.util.List;
+import java.util.Scanner;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-
-
 import controller.CompanyLoginController;
+import model.Client;
+import model.CompanyJob;
+import model.HomeCompany;
 @ManagedBean(name = "CoLogin", eager = true)
 public class CompanyLoginBean {
 	String username;
 	String password;
+	String description;
+	float salary;
+	int number_of_vacancy;
+	String location;
+	String job_role;
 	
 	int l;
 	public void loginClient() {
@@ -24,6 +34,76 @@ public class CompanyLoginBean {
 	}
 	
 	
+
+
+	List<Client> L;
+	public List<Client> findClient() {
+		try {
+			CompanyLoginController cs  = new CompanyLoginController();
+			if(location!=null || job_role!=null) {
+				L = cs.clientFind(location, job_role);
+				return L;
+			}
+//			HomeCompany c = new HomeCompany();
+//			if(l==1)
+//				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "index.xhtml");
+		}
+			catch (Exception e) {
+             System.out.println(e.getMessage());
+		}
+		return L;
+	}
+	
+	List<HomeCompany> s;
+	public List<HomeCompany> companyAllJobs() {
+		try {
+			CompanyLoginController cs  = new CompanyLoginController();
+			File myObj = new File("C:\\Users\\mvr_n\\workspace\\CRM\\company.txt");
+		      Scanner myReader = new Scanner(myObj);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
+		        System.out.println(data);
+		        username = data;
+		        break;
+		      }
+	      myReader.close();
+	      s =  cs.getAllJobs(username);
+	      return s;
+	      
+		}
+		catch (Exception e) {
+            System.out.println(e.getMessage());
+		}
+		
+		return s;
+	}
+	
+	public void addjob() {
+		try {
+			CompanyJob cj = new CompanyJob();
+			CompanyLoginController cs  = new CompanyLoginController();
+			File myObj = new File("C:\\Users\\mvr_n\\workspace\\CRM\\company.txt");
+		      Scanner myReader = new Scanner(myObj);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
+		        System.out.println(data);
+		        cj.setUsername(data);
+		        break;
+		      }
+	      myReader.close();
+	      cj.setDescription(description);
+	      cj.setJob_role(job_role);
+	      cj.setNumber_of_vacancy(number_of_vacancy);
+	      cj.setSalary(salary);
+	      cs.jobadd(cj);
+		}
+		catch (Exception e) {
+            System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	
 	public String getUsername() {
 		return username;
 	}
@@ -36,10 +116,48 @@ public class CompanyLoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public float getSalary() {
+		return salary;
+	}
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	public int getNumber_of_vacancy() {
+		return number_of_vacancy;
+	}
+	public void setNumber_of_vacancy(int number_of_vacancy) {
+		this.number_of_vacancy = number_of_vacancy;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getJob_role() {
+		return job_role;
+	}
+	public void setJob_role(String job_role) {
+		this.job_role = job_role;
+	}
 	public int getL() {
 		return l;
 	}
 	public void setL(int l) {
 		this.l = l;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
