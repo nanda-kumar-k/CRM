@@ -110,13 +110,13 @@ public class CompanyLoginBean {
 	      cj.setDescription(description);
 	      cj.setSalary(salary);
 	      cj.setNumber_of_vacancy(number_of_vacancy);
-	      
+	      FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\count.txt");
+	      String temp =String.valueOf(cou+1);
+	      myWriter.write(temp);
+	      myWriter.close();
 	      l = cs.jobadd(cj);
 	      if(l==1) {
-	    	  FileWriter myWriter = new FileWriter("C:\\Users\\mvr_n\\workspace\\CRM\\count.txt");
-		      myWriter.write(cou+1);
-		      myWriter.close();
-				FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "companyjobprofile.xhtml");
+			  FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "companyjobprofile.xhtml");
 	      }
 	      }
 		catch (Exception e) {
