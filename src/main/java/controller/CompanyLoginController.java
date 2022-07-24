@@ -15,6 +15,17 @@ import model.Company;
 import model.CompanyJob;
 import model.HomeCompany;
 
+
+import java.util.Properties;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 public class CompanyLoginController {
 	private EntityManager em;
 	private EntityManagerFactory emf;
@@ -102,6 +113,41 @@ public class CompanyLoginController {
 		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
 		em.getTransaction().commit();
 		System.out.println("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+		
+		em.getTransaction().begin();
+		Query q1 = em.createQuery("SELECT c FROM Client c WHERE c.preferred_role=?1");
+		q1.setParameter(1, companyjob.getJob_role());
+		List<Client> ci = q1.getResultList();
+		
+		for(int i=0; i<ci.size(); i++) {
+			try {
+				Properties props = new Properties();
+			    props.put("mail.smtp.host","smtp.gmail.com");
+			    
+			    props.put("mail.smtp.auth", "true");
+			    props.put("mail.smtp.port", "465");
+			    props.put("mail.smtp.auth", "true");
+			    props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+			    props.put("mail.smtp.socketFactory.port", "465");
+			    props.put("mail.smtp.socketFactory.fallback", "false");
+	
+			    Session session = Session.getDefaultInstance(props, null);
+			    session.setDebug(true);
+	
+			    MimeMessage mimeMessage = new MimeMessage(session);
+			    mimeMessage.setFrom(new InternetAddress("krishnatejakt369@gmail.com"));
+			    mimeMessage.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(ci.get(i).getEmail_id()));
+			    mimeMessage.setContent("<H2>Hey </H2>"+ci.get(i).getFirst_name()+" "+ci.get(i).getLast_name()+"<H2>!!! You have found an offer from one company offering job on </H2>"+companyjob.getJob_role(),"text/html");
+			    mimeMessage.setSubject("CRM");
+			    Transport transport=session.getTransport("smtp");
+			    transport.connect("smtp.gmail.com","krishnatejakt369@gmail.com","dszbuhwuqixjalet");
+			    transport.sendMessage(mimeMessage,mimeMessage.getAllRecipients());
+			}
+			catch (Exception e) {
+	             System.out.println(e.getMessage());
+	  }
+		}
+		
 		em.close();
 		emf.close();
 		
